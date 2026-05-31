@@ -1,0 +1,13 @@
+id: reverb
+manufacturer: "Generic"
+model: "Reverb"
+type: analog
+controls:
+  - name: Mix
+    type: knob
+    min: 0
+    max: 10
+  - name: Decay
+    type: knob
+    min: 0
+    max: 10

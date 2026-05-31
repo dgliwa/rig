@@ -1,0 +1,17 @@
+id: tumnus
+manufacturer: "Wampler"
+model: "Tumnus"
+type: analog
+controls:
+  - name: Gain
+    type: knob
+    min: 0
+    max: 10
+  - name: Level
+    type: knob
+    min: 0
+    max: 10
+  - name: Treble
+    type: knob
+    min: 0
+    max: 10

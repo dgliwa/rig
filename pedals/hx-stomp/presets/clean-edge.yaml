@@ -1,0 +1,57 @@
+id: clean-edge
+pedal: hx-stomp
+name: "Clean Edge"
+preset_number: 12
+blocks:
+  - name: Amp
+    type: amp
+    model: "US Double Nrm"
+    settings:
+      Drive: 4.5
+      Bass: 5.0
+      Mid: 6.0
+      Treble: 5.0
+      Master: 7.0
+  - name: Cab
+    type: cab
+    model: "4x12 Greenback 25"
+    settings: {}
+  - name: Reverb
+    type: reverb
+    model: "Plate"
+    settings:
+      Mix: 35
+      Decay: 40
+  - name: Delay
+    type: delay
+    model: "Digital"
+    settings:
+      Time: 480
+      Feedback: 25
+      Mix: 30
+midi_commands:
+  - trigger: on_load
+    type: pc
+    channel: 3
+    value: 4
+    label: "Brothers → Low Gain"
+  - trigger: on_load
+    type: pc
+    channel: 4
+    value: 2
+    label: "Wombtone → Slow Sweep"
+  - trigger: on_load
+    type: cc
+    channel: 4
+    cc_number: 14
+    value: 50
+    label: "Wombtone Mix"
+footswitches:
+  - switch: "FS1"
+    action: toggle_block
+    target: "Delay"
+  - switch: "FS2"
+    action: tap_tempo
+  - switch: "FS3"
+    action: toggle_block
+    target: "Reverb"

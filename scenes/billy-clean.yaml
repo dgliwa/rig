@@ -1,0 +1,11 @@
+name: billy-clean
+description: "Billy Strings clean tone with subtle phaser"
+tempo: 118
+presets:
+  hx-stomp: "clean-edge"
+  brothers: "low-gain"
+  wombtone: "slow-sweep"
+  tumnus: "edge-of-breakup"
+tags:
+  - bluegrass
+  - clean

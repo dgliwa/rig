@@ -1,0 +1,17 @@
+id: delay
+manufacturer: "Generic"
+model: "Delay"
+type: analog
+controls:
+  - name: Time
+    type: knob
+    min: 0
+    max: 10
+  - name: Feedback
+    type: knob
+    min: 0
+    max: 10
+  - name: Mix
+    type: knob
+    min: 0
+    max: 10

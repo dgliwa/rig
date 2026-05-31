@@ -1,0 +1,10 @@
+name: crunch
+description: "Crunchy rhythm tone"
+tempo: 118
+presets:
+  hx-stomp: "crunch"
+  brothers: "low-gain"
+  tumnus: "edge-of-breakup"
+tags:
+  - rhythm
+  - crunch

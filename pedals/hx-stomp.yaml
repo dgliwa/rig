@@ -1,0 +1,5 @@
+id: hx-stomp
+manufacturer: "Line 6"
+model: "HX Stomp"
+type: modeler
+midi_channel: 1

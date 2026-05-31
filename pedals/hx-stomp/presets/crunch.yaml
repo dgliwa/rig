@@ -1,0 +1,14 @@
+id: crunch
+pedal: hx-stomp
+name: "Crunch"
+preset_number: 7
+blocks:
+  - name: Amp
+    type: amp
+    model: "US Double Nrm"
+    settings:
+      Drive: 7.0
+      Bass: 4.0
+      Mid: 7.0
+      Treble: 5.0
+      Master: 6.0

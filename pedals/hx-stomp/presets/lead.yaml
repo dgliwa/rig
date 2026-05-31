@@ -1,0 +1,36 @@
+id: lead
+pedal: hx-stomp
+name: "Lead"
+preset_number: 5
+blocks:
+  - name: Amp
+    type: amp
+    model: "US Double Nrm"
+    settings:
+      Drive: 8.0
+      Bass: 4.0
+      Mid: 8.0
+      Treble: 6.0
+      Master: 8.0
+  - name: Cab
+    type: cab
+    model: "4x12 Greenback 25"
+    settings: {}
+  - name: Delay
+    type: delay
+    model: "Digital"
+    settings:
+      Time: 500
+      Feedback: 30
+      Mix: 35
+midi_commands:
+  - trigger: on_load
+    type: pc
+    channel: 3
+    value: 7
+    label: "Brothers → Lead"
+  - trigger: on_load
+    type: pc
+    channel: 4
+    value: 5
+    label: "Wombtone → Deep Swirl"

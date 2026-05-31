@@ -1,0 +1,10 @@
+name: lead
+description: "Sustained lead tone"
+tempo: 118
+presets:
+  hx-stomp: "lead"
+  brothers: "lead"
+  wombtone: "deep-swirl"
+tags:
+  - lead
+  - solo

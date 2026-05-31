@@ -1,0 +1,13 @@
+id: trem
+manufacturer: "Generic"
+model: "Tremolo"
+type: analog
+controls:
+  - name: Speed
+    type: knob
+    min: 0
+    max: 10
+  - name: Depth
+    type: knob
+    min: 0
+    max: 10
