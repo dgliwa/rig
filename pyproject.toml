@@ -1,0 +1,6 @@
+[project]
+name = "rig"
+version = "0.1.0"
+description = "Derek's guitar rig configuration"
+dependencies = ["rig-cli"]
+requires-python = ">=3.12"

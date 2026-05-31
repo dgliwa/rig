@@ -1,0 +1,11 @@
+midi_channel: 1
+banks:
+  - bank: 1
+    name: "Scenes"
+    switches:
+      A: { scene: billy-clean }
+      B: { scene: crunch }
+      C: { scene: lead }
+      D: { scene: ambient }
+      E: { scene: solo }
+      F: { scene: tuning }

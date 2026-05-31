@@ -1,0 +1,28 @@
+chain:
+  - pedal: tumnus
+    position: 1
+    loop: front
+  - pedal: ac-boost
+    position: 2
+    loop: front
+  - pedal: brothers
+    position: 3
+    loop: front
+  - pedal: hx-stomp
+    position: 4
+    loop: front
+  - pedal: wombtone
+    position: 5
+    loop: fx_loop
+  - pedal: mood
+    position: 6
+    loop: fx_loop
+  - pedal: trem
+    position: 7
+    loop: fx_loop
+  - pedal: delay
+    position: 8
+    loop: fx_loop
+  - pedal: reverb
+    position: 9
+    loop: fx_loop

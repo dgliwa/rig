@@ -1,0 +1,4 @@
+generated/
+.rig/state.json
+__pycache__/
+*.pyc
