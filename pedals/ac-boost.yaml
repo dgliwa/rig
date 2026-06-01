@@ -1,8 +1,10 @@
 id: ac-boost
-manufacturer: "Xotic"
-model: "AC Boost"
+manufacturer: Xotic
+model: AC Boost
 type: analog
-controls:
+config:
+  type: manual
+  controls:
   - name: Gain
     type: knob
     min: 0

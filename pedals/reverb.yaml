@@ -1,8 +1,10 @@
 id: reverb
-manufacturer: "Generic"
-model: "Reverb"
+manufacturer: Generic
+model: Reverb
 type: analog
-controls:
+config:
+  type: manual
+  controls:
   - name: Mix
     type: knob
     min: 0

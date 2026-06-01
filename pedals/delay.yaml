@@ -1,8 +1,10 @@
 id: delay
-manufacturer: "Generic"
-model: "Delay"
+manufacturer: Generic
+model: Delay
 type: analog
-controls:
+config:
+  type: manual
+  controls:
   - name: Time
     type: knob
     min: 0

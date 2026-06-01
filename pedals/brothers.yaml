@@ -1,5 +1,7 @@
 id: brothers
-manufacturer: "Chase Bliss Audio"
-model: "Brothers"
+manufacturer: Chase Bliss Audio
+model: Brothers
 type: digital
-midi_channel: 3
+config:
+  type: chase_bliss
+  midi_channel: 3

@@ -1,5 +1,7 @@
 id: mood
-manufacturer: "Chase Bliss Audio"
-model: "Mood"
+manufacturer: Chase Bliss Audio
+model: Mood
 type: digital
-midi_channel: 5
+config:
+  type: chase_bliss
+  midi_channel: 5

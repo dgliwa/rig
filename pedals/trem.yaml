@@ -1,8 +1,10 @@
 id: trem
-manufacturer: "Generic"
-model: "Tremolo"
+manufacturer: Generic
+model: Tremolo
 type: analog
-controls:
+config:
+  type: manual
+  controls:
   - name: Speed
     type: knob
     min: 0

@@ -1,8 +1,10 @@
 id: tumnus
-manufacturer: "Wampler"
-model: "Tumnus"
+manufacturer: Wampler
+model: Tumnus
 type: analog
-controls:
+config:
+  type: manual
+  controls:
   - name: Gain
     type: knob
     min: 0
