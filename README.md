@@ -5,8 +5,14 @@ Infrastructure-as-Code configuration for my guitar rig.
 ## Prerequisites
 
 ```bash
-pip install rig-cli
+# Install rig-cli globally (see rig-cli README for details)
+uv tool install /path/to/rig-cli
+
+# Or run directly without installing
+uv run --directory /path/to/rig-cli rig validate
 ```
+
+See [rig-cli](https://github.com/dgliwa/rig_cli) for setup and development instructions.
 
 ## Directory Layout
 
