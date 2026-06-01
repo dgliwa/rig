@@ -1,7 +1,0 @@
-id: mood
-manufacturer: Chase Bliss Audio
-model: Mood
-type: digital
-config:
-  type: chase_bliss
-  midi_channel: 5

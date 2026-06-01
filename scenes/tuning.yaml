@@ -1,7 +1,0 @@
-name: tuning
-description: "Silent tuning — everything muted"
-tempo: 120
-presets:
-  hx-stomp: "tuning"
-tags:
-  - utility

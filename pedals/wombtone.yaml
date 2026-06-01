@@ -1,7 +1,0 @@
-id: wombtone
-manufacturer: Chase Bliss Audio
-model: Wombtone
-type: digital
-config:
-  type: chase_bliss
-  midi_channel: 4

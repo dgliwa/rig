@@ -1,7 +1,0 @@
-id: hx-stomp
-manufacturer: Line 6
-model: HX Stomp
-type: modeler
-config:
-  type: midi
-  midi_channel: 1
