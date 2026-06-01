@@ -1,4 +1,5 @@
 generated/
-.rig/state.json
+.rig/
 __pycache__/
 *.pyc
+.DS_Store
