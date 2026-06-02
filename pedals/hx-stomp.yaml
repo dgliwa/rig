@@ -8,21 +8,19 @@ config:
 presets:
   - id: princeton
     name: Princeton D
-    preset_number: 0
+    preset_number: 36
     hlx_file: hlx/Princeton D.hlx
     notes: Clean Fender tone, D path
   - id: marshall
     name: Marshall D
-    preset_number: 1
+    preset_number: 37
     hlx_file: hlx/Marshall D.hlx
     notes: British crunch, D path
-  - id: mesa-lead
-    name: Mesa Lead D
-    preset_number: 2
-    hlx_file: hlx/Mesa Lead D.hlx
-    notes: High gain lead, D path
-  - id: boc-lead
-    name: BOC Lead
-    preset_number: 3
-    hlx_file: hlx/BOC Lead.hlx
-    notes: BOC-inspired lead tone
+  - id: boogie-pb
+    name: Boogie PB
+    preset_number: 38
+    hlx_file: hlx/Boogie PB.hlx
+  - id: doogie-pb
+    name: Doogie PB
+    preset_number: 39
+    hlx_file: hlx/Doogie PB.hlx

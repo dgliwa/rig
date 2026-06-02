@@ -3,5 +3,5 @@ description: High gain lead with feedback drone
 mc6_bank: 1
 mc6_switch: C
 presets:
-  hx-stomp: mesa-lead
+  hx-stomp: boogie-pb
   mood: feedback-drone
