@@ -1,0 +1,28 @@
+id: hx-stomp
+manufacturer: Line 6
+model: HX Stomp
+type: modeler
+config:
+  type: midi
+  midi_channel: 1
+presets:
+  - id: princeton
+    name: Princeton D
+    preset_number: 0
+    hlx_file: hlx/Princeton D.hlx
+    notes: Clean Fender tone, D path
+  - id: marshall
+    name: Marshall D
+    preset_number: 1
+    hlx_file: hlx/Marshall D.hlx
+    notes: British crunch, D path
+  - id: mesa-lead
+    name: Mesa Lead D
+    preset_number: 2
+    hlx_file: hlx/Mesa Lead D.hlx
+    notes: High gain lead, D path
+  - id: boc-lead
+    name: BOC Lead
+    preset_number: 3
+    hlx_file: hlx/BOC Lead.hlx
+    notes: BOC-inspired lead tone

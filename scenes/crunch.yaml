@@ -1,0 +1,7 @@
+name: crunch
+description: British crunch with subtle shimmer
+mc6_bank: 1
+mc6_switch: B
+presets:
+  hx-stomp: marshall
+  mood: subtle-shimmer

@@ -1,0 +1,68 @@
+id: mood
+manufacturer: Chase Bliss Audio
+model: Mood MkII
+type: digital
+config:
+  type: chase_bliss
+  midi_channel: 2
+presets:
+  - id: ambient-bloom
+    name: Ambient Bloom
+    preset_number: 3
+    parameters:
+      time: 85
+      mix: 70
+      length: 80
+      wet_modify: 35
+      clock: 55
+      wet_bypass: 127
+      micro_bypass: 0
+    notes: Long lush delay, wet channel active, micro looper bypassed
+  - id: subtle-shimmer
+    name: Subtle Shimmer
+    preset_number: 4
+    parameters:
+      time: 45
+      mix: 50
+      length: 55
+      wet_modify: 65
+      clock: 70
+      wet_bypass: 127
+      micro_bypass: 0
+    notes: Shorter delay with shimmer modulation
+  - id: feedback-drone
+    name: Feedback Drone
+    preset_number: 5
+    parameters:
+      time: 120
+      mix: 105
+      length: 110
+      wet_modify: 100
+      clock: 25
+      ramp_speed: 90
+      wet_bypass: 127
+      micro_bypass: 127
+      dip_l_1: 127
+      dip_l_2: 0
+    notes: Slow clock creates pitch artifacts; both channels active
+    tags:
+      - wacky
+  - id: glitch-storm
+    name: Glitch Storm
+    preset_number: 6
+    parameters:
+      time: 12
+      mix: 115
+      length: 18
+      wet_modify: 127
+      clock: 120
+      micro_looper_modify: 127
+      ramp_speed: 127
+      wet_bypass: 127
+      micro_bypass: 127
+      dip_l_1: 127
+      dip_l_2: 127
+      dip_r_1: 127
+    notes: Granular glitch territory; max everything, very fast clock
+    tags:
+      - wacky

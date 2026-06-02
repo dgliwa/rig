@@ -1,0 +1,7 @@
+chain:
+  - pedal: hx-stomp
+    position: 1
+    loop: front
+  - pedal: mood
+    position: 2
+    loop: front

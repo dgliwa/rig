@@ -1,0 +1,7 @@
+name: clean
+description: Clean Fender with ambient bloom
+mc6_bank: 1
+mc6_switch: A
+presets:
+  hx-stomp: princeton
+  mood: ambient-bloom

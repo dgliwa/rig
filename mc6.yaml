@@ -1,0 +1,12 @@
+banks:
+  - bank: 1
+    name: Main Rig
+    switches:
+      A:
+        scene: clean
+      B:
+        scene: crunch
+      C:
+        scene: lead
+      D:
+        scene: wacky

@@ -1,0 +1,7 @@
+name: wacky
+description: BOC lead into full glitch chaos
+mc6_bank: 1
+mc6_switch: D
+presets:
+  hx-stomp: boc-lead
+  mood: glitch-storm
