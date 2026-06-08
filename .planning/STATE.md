@@ -1,14 +1,14 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.1
-milestone_name: Architecture Migration
-status: planned
-last_updated: "2026-06-07"
-last_activity: 2026-06-07
+milestone: v1.2
+milestone_name: Single-File Migration
+status: planning
+last_updated: "2026-06-08"
+last_activity: 2026-06-08 — Milestone v1.1 archived; planning v1.2
 progress:
-  total_phases: 1
+  total_phases: 0
   completed_phases: 0
-  total_plans: 1
+  total_plans: 0
   completed_plans: 0
   percent: 0
 ---
@@ -17,53 +17,45 @@ progress:
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-06-07)
+See: .planning/PROJECT.md (updated 2026-06-08)
 
 **Core value:** A single `rig validate` confirms the config repo is consistent and ready to apply
-**Current focus:** Phase 1 — Migrate & Validate
+**Current focus:** Planning v1.2 — Single-File Migration
 
-## Current Position
+## v1.1 Shipped
 
-Phase: 1 of 1 (Migrate & Validate)
-Plan: 0 of 1 (01-PLAN.md created)
-Status: Ready to execute
-Last activity: 2026-06-07 — Phase 1 plan created; verified PASS
+Milestone v1.1 Architecture Migration archived 2026-06-08.
 
-Progress: [░░░░░░░░░░] 0%
+- `pedals/` renamed to `devices/`
+- `signal-chain.yaml` updated to `device:` field
+- mc6, Mood presets, scenes committed
+- `rig validate` exits 0
+
+**Known gap deferred to v1.2:** rig-cli uses a single-file schema (devices inline in rig.yaml). The directory-based YAML files are not loaded; `rig validate` shows 0 devices/0 scenes. Full content validation requires v1.2 migration.
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 0
-- Average duration: —
-- Total execution time: —
-
-**By Phase:**
-
-| Phase | Plans | Total | Avg/Plan |
-|-------|-------|-------|----------|
-| 1. Migrate & Validate | 0 | — | — |
+- v1.1: 1 phase, 1 plan, ~1 day
 
 ## Accumulated Context
 
 ### Decisions
 
 Decisions are logged in PROJECT.md Key Decisions table.
-Recent decisions affecting current work:
 
-- Rename `pedals/` → `devices/` proactively (rig-cli TODO signals `pedals/` will eventually break)
-- Version rig repo at v1.1 to match rig-cli counterpart
+- Defer single-file migration to v1.2 — v1.1 scope was naming migration only
 
 ### Pending Todos
 
-None yet.
+- Start v1.2 via `/gsd-new-milestone`
 
 ### Blockers/Concerns
 
-None yet.
+None.
 
 ## Session Continuity
 
-Last session: 2026-06-07
-Stopped at: Roadmap created — Phase 1 ready to plan
+Last session: 2026-06-08
+Stopped at: v1.1 milestone archived — ready to start v1.2
 Resume file: None

@@ -2,50 +2,41 @@
 
 ## What This Is
 
-Infrastructure-as-Code configuration for a personal guitar rig (HX Stomp + Mood MkII + MC6 controller). YAML files declare pedals, presets, and scenes; rig-cli validates, plans, and applies those configs to physical MIDI devices. One person, one rig, fully git-tracked.
+Infrastructure-as-Code configuration for a personal guitar rig (HX Stomp + Mood MkII + MC6 controller). YAML files declare devices, presets, and scenes; rig-cli validates, plans, and applies those configs to physical MIDI devices. One person, one rig, fully git-tracked.
 
 ## Core Value
 
 A single `rig validate` should confirm the config repo is consistent and ready to apply — no guessing, no manual cross-referencing.
 
-## Current Milestone: v1.1 Architecture Migration
-
-**Goal:** Migrate rig configs to match rig-cli's current (post-v1.1) preferred structure so `rig validate` passes cleanly and the repo is free of deprecated conventions.
-
-**Target features:**
-- Rename `pedals/` → `devices/` to match rig-cli's preferred directory name
-- Update `signal-chain.yaml` to use `device:` instead of legacy `pedal:` field
-- Commit in-progress changes (mc6 moved to pedals/, Mood presets revised, scenes revised)
-- Validate cleanly against current rig-cli codebase
-
 ## Requirements
 
 ### Validated
 
-(None yet — first milestone)
+- ✓ `pedals/` directory renamed to `devices/` so rig-cli uses preferred path — v1.1
+- ✓ `signal-chain.yaml` uses `device:` field for all chain entries — v1.1
+- ✓ In-progress changes committed cleanly (mc6, Mood presets, scenes) — v1.1
 
 ### Active
 
-- [ ] **MIGS-01**: `pedals/` directory renamed to `devices/` so rig-cli uses preferred path
-- [ ] **MIGS-02**: `signal-chain.yaml` uses `device:` field for all chain entries
-- [ ] **MIGS-03**: In-progress work committed — mc6 in devices/, revised Mood presets, revised scenes
-- [ ] **MIGS-04**: `rig validate` passes with zero errors against current rig-cli
+- [ ] **MIGS-04 / partial**: `rig validate` validates actual device and scene content — currently passes but validates 0 devices/0 scenes due to rig-cli v1.2+ single-file schema change
+- [ ] **v1.2**: Migrate device YAML files (devices/*.yaml, scenes/*.yaml) inline into a single `rig.yaml` to match rig-cli v1.2+ schema so `rig validate` loads and validates real content
 
 ### Out of Scope
 
 | Feature | Reason |
 |---------|--------|
-| Adding new scenes | Scope is migration only — content stays, structure transforms |
-| New pedal/device additions | No new gear being added in this milestone |
-| rig-cli source changes | This is a rig config repo milestone only |
+| Adding new scenes | Content stays, structure transforms first |
+| New pedal/device additions | No new gear being added |
+| rig-cli source changes | This is a rig config repo only |
+| MC6 JSON generation | Deferred — validate first, generate in v1.3+ |
 
 ## Context
 
-- rig-cli is at v1.1 (plugin architecture shipped 2026-06-07); v1.1 is next
-- The loader prefers `devices/` over `pedals/` and has a TODO to drop `pedals/` support
-- Signal chain `pedal:` field still works via AliasChoices but `device:` is canonical
-- Uncommitted changes already exist: mc6.yaml moved from root → pedals/, Mood presets updated (actual MIDI parameters from physical pedal), scene descriptions revised
-- 4 active scenes: clean (Princeton + Second Guitarist), crunch (Marshall + Ambient Pad), lead (Boogie + Broken Tape), wacky (Doogie + Sigur Ros Drone)
+- rig-cli is at v1.2+ (single-file schema); `devices/` directory-based loading is no longer active
+- Config repo has 9 YAML files, 167 lines total
+- 3 devices: hx-stomp (HX Stomp), mood (Mood MkII), mc6 (MC6 controller)
+- 4 scenes: clean, crunch, lead, wacky
+- `rig validate` exits 0 but loads 0 devices/0 scenes — schema migration pending for v1.2
 
 ## Constraints
 
@@ -56,8 +47,9 @@ A single `rig validate` should confirm the config repo is consistent and ready t
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Version rig repo at v1.1 to match rig-cli counterpart | Keeps version numbers in sync across repos | — Pending |
-| Rename pedals/ → devices/ rather than waiting | rig-cli TODOs signal pedals/ will eventually break | — Pending |
+| Version rig repo at v1.1 to match rig-cli counterpart | Keeps version numbers in sync across repos | ✓ Good — repo is now v1.1 |
+| Rename `pedals/` → `devices/` rather than waiting | rig-cli TODOs signal `pedals/` will eventually break | ✓ Good — done, canonical naming in place |
+| Defer single-file migration to v1.2 | v1.1 scope was naming migration only; schema format change is a bigger lift | — Pending v1.2 |
 
 ## Evolution
 
@@ -77,4 +69,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-06-07 after milestone v1.1 initialized*
+*Last updated: 2026-06-08 after v1.1 milestone*

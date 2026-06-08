@@ -2,31 +2,27 @@
 
 ## Milestones
 
-- 🚧 **v1.1 Architecture Migration** - Phase 1 (in progress)
+- ✅ **v1.1 Architecture Migration** — Phase 1 (shipped 2026-06-08)
+- 📋 **v1.2 Single-File Migration** — Planned (migrate device YAML files inline into rig.yaml)
 
 ## Phases
 
-### 🚧 v1.1 Architecture Migration (In Progress)
+<details>
+<summary>✅ v1.1 Architecture Migration — SHIPPED 2026-06-08</summary>
 
-**Milestone Goal:** Migrate rig configs to rig-cli's current preferred structure so `rig validate` passes cleanly with no deprecated conventions.
+- [x] Phase 1: Migrate & Validate (1/1 plans) — completed 2026-06-07
 
-- [ ] **Phase 1: Migrate & Validate** - Commit in-progress work, rename `pedals/` to `devices/`, update signal-chain field names, and confirm `rig validate` passes
+See: `.planning/milestones/v1.1-ROADMAP.md`
 
-## Phase Details
+</details>
 
-### Phase 1: Migrate & Validate
-**Goal**: The config repo uses rig-cli's canonical structure and passes validation cleanly
-**Depends on**: Nothing (first phase)
-**Requirements**: MIGS-01, MIGS-02, MIGS-03, MIGS-04
-**Success Criteria** (what must be TRUE):
-  1. The `devices/` directory exists and contains all device YAML files; no `pedals/` directory remains
-  2. Every entry in `signal-chain.yaml` uses the `device:` field — no `pedal:` field references remain
-  3. All in-progress changes (mc6.yaml location, Mood preset values, scene revisions) are committed to git with clean working tree
-  4. `rig validate` exits with zero errors against the local rig-cli install
-**Plans**: 1 (01-PLAN.md — Migrate & Validate Full Migration)
+### 📋 v1.2 Single-File Migration (Planned)
+
+- [ ] Phase 2: Migrate devices and scenes into single `rig.yaml` (inline format required by rig-cli v1.2+)
 
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
-| 1. Migrate & Validate | v1.1 | 0/1 | Planned | - |
+| 1. Migrate & Validate | v1.1 | 1/1 | Complete | 2026-06-07 |
+| 2. Single-File Migration | v1.2 | 0/1 | Not started | - |
