@@ -23,10 +23,10 @@
   2. Every entry in `signal-chain.yaml` uses the `device:` field — no `pedal:` field references remain
   3. All in-progress changes (mc6.yaml location, Mood preset values, scene revisions) are committed to git with clean working tree
   4. `rig validate` exits with zero errors against the local rig-cli install
-**Plans**: TBD
+**Plans**: 1 (01-PLAN.md — Migrate & Validate Full Migration)
 
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
-| 1. Migrate & Validate | v1.2 | 0/? | Not started | - |
+| 1. Migrate & Validate | v1.2 | 0/1 | Planned | - |
