@@ -1,10 +1,10 @@
 ---
 gsd_state_version: 1.0
 milestone: v1.2
-milestone_name: Single-File Migration
+milestone_name: Flesh Out the Rig
 status: planning
-last_updated: "2026-06-08"
-last_activity: 2026-06-08 — Milestone v1.1 archived; planning v1.2
+last_updated: "2026-06-08T16:20:07.828Z"
+last_activity: 2026-06-08
 progress:
   total_phases: 0
   completed_phases: 0
@@ -36,6 +36,7 @@ Milestone v1.1 Architecture Migration archived 2026-06-08.
 ## Performance Metrics
 
 **Velocity:**
+
 - v1.1: 1 phase, 1 plan, ~1 day
 
 ## Accumulated Context
@@ -59,3 +60,10 @@ None.
 Last session: 2026-06-08
 Stopped at: v1.1 milestone archived — ready to start v1.2
 Resume file: None
+
+## Current Position
+
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-06-08 — Milestone v1.2 started
