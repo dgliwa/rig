@@ -1,7 +1,0 @@
-name: wacky
-description: BOC lead into sigur ros drone
-mc6_bank: 1
-mc6_switch: D
-presets:
-  hx-stomp: doogie-pb
-  mood: sigur-ros-drone

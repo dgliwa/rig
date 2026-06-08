@@ -1,7 +1,0 @@
-name: clean
-description: Clean Fender with second guitarist
-mc6_bank: 1
-mc6_switch: A
-presets:
-  hx-stomp: princeton
-  mood: second-guitarist

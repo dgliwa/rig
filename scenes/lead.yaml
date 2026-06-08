@@ -1,7 +1,0 @@
-name: lead
-description: High gain lead with broken tape
-mc6_bank: 1
-mc6_switch: C
-presets:
-  hx-stomp: boogie-pb
-  mood: broken-tape-memories

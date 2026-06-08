@@ -1,3 +1,353 @@
 name: Derek's Rig
 description: MC6 controller → Mood MkII → HX Stomp
-midi_channel: 1
+devices:
+  - id: hx-stomp
+    manufacturer: Line 6
+    model: HX Stomp
+    type: modeler
+    config:
+      type: midi
+      midi_channel: 1
+    presets:
+      - id: princeton
+        name: Princeton D
+        preset_number: 36
+        hlx_file: hlx/Princeton D.hlx
+        notes: Clean Fender tone, D path
+      - id: marshall
+        name: Marshall D
+        preset_number: 37
+        hlx_file: hlx/Marshall D.hlx
+        notes: British crunch, D path
+      - id: boogie-pb
+        name: Boogie PB
+        preset_number: 38
+        hlx_file: hlx/Boogie PB.hlx
+      - id: doogie-pb
+        name: Doogie PB
+        preset_number: 39
+        hlx_file: hlx/Doogie PB.hlx
+
+  - id: mood
+    manufacturer: Chase Bliss Audio
+    model: Mood MkII
+    type: digital
+    config:
+      type: chase_bliss
+      midi_channel: 2
+      controls:
+        - name: time
+          type: knob
+          midi_cc: 14
+          min: 0
+          max: 127
+        - name: mix
+          type: knob
+          midi_cc: 15
+          min: 0
+          max: 127
+        - name: length
+          type: knob
+          midi_cc: 16
+          min: 0
+          max: 127
+        - name: wet_modify
+          type: knob
+          midi_cc: 17
+          min: 0
+          max: 127
+        - name: clock
+          type: knob
+          midi_cc: 18
+          min: 0
+          max: 127
+        - name: loop_modify
+          type: knob
+          midi_cc: 19
+          min: 0
+          max: 127
+        - name: ramp_speed
+          type: knob
+          midi_cc: 20
+          min: 0
+          max: 127
+        - name: wet_channel
+          type: toggle
+          midi_cc: 21
+          min: 0
+          max: 127
+          positions:
+            - reverb
+            - delay
+            - slip
+        - name: routing
+          type: toggle
+          midi_cc: 22
+          min: 0
+          max: 127
+          positions:
+            - in
+            - wet_and_in
+            - wet
+        - name: loop
+          type: toggle
+          midi_cc: 23
+          min: 0
+          max: 127
+          positions:
+            - env
+            - tape
+            - stretch
+        - name: wet_clock
+          type: toggle
+          midi_cc: 53
+          min: 0
+          max: 7
+          positions:
+            - 32nd
+            - 16th
+            - eighth_triplet
+            - eighth
+            - dotted_eighth
+            - quarter
+            - half
+            - whole
+        - name: loop_clock_division
+          type: toggle
+          midi_cc: 54
+          min: 0
+          max: 7
+          positions:
+            - 32nd
+            - 16th
+            - eighth_triplet
+            - eighth
+            - dotted_eighth
+            - quarter
+            - half
+            - whole
+        - name: true_bypass
+          type: switch
+          midi_cc: 55
+          min: 0
+          max: 127
+        - name: micro_bypass
+          type: switch
+          midi_cc: 102
+          min: 0
+          max: 127
+        - name: wet_bypass
+          type: switch
+          midi_cc: 103
+          min: 0
+          max: 127
+        - name: freeze
+          type: switch
+          midi_cc: 105
+          min: 0
+          max: 127
+        - name: loop_overdub
+          type: switch
+          midi_cc: 106
+          min: 0
+          max: 127
+        - name: tap_tempo
+          type: switch
+          midi_cc: 107
+          min: 0
+          max: 127
+        - name: dip_l_time
+          type: dipswitch
+          midi_cc: 61
+          min: 0
+          max: 127
+        - name: dip_l_wet_modify
+          type: dipswitch
+          midi_cc: 62
+          min: 0
+          max: 127
+        - name: dip_l_clock
+          type: dipswitch
+          midi_cc: 63
+          min: 0
+          max: 127
+        - name: dip_l_loop_modify
+          type: dipswitch
+          midi_cc: 64
+          min: 0
+          max: 127
+        - name: dip_l_length
+          type: dipswitch
+          midi_cc: 65
+          min: 0
+          max: 127
+        - name: dip_l_bounce
+          type: dipswitch
+          midi_cc: 66
+          min: 0
+          max: 127
+        - name: dip_l_sweep
+          type: dipswitch
+          midi_cc: 67
+          min: 0
+          max: 127
+        - name: dip_l_polarity
+          type: dipswitch
+          midi_cc: 68
+          min: 0
+          max: 127
+        - name: dip_r_classic
+          type: dipswitch
+          midi_cc: 71
+          min: 0
+          max: 127
+        - name: dip_r_miso
+          type: dipswitch
+          midi_cc: 72
+          min: 0
+          max: 127
+        - name: dip_r_spread
+          type: dipswitch
+          midi_cc: 73
+          min: 0
+          max: 127
+        - name: dip_r_dry_kill
+          type: dipswitch
+          midi_cc: 74
+          min: 0
+          max: 127
+        - name: dip_r_trails
+          type: dipswitch
+          midi_cc: 75
+          min: 0
+          max: 127
+        - name: dip_r_latch
+          type: dipswitch
+          midi_cc: 76
+          min: 0
+          max: 127
+        - name: dip_r_no_dub
+          type: dipswitch
+          midi_cc: 77
+          min: 0
+          max: 127
+        - name: dip_r_smooth
+          type: dipswitch
+          midi_cc: 78
+          min: 0
+          max: 127
+    presets:
+      - id: sigur-ros-drone
+        name: Sigur Ros Drone
+        preset_number: 3
+        parameters:
+          time: 70
+          mix: 35
+          length: 120
+          wet_modify: 95
+          clock: 42
+          loop_modify: 105
+          ramp_speed: 0
+          wet_channel: 0
+          routing: 1
+          loop: 2
+          wet_clock: 6
+          loop_clock_division: 5
+          dip_r_spread: 127
+          dip_r_trails: 127
+          dip_r_smooth: 127
+      - id: ambient-pad-machine
+        name: Ambient Pad Machine
+        preset_number: 4
+        parameters:
+          time: 95
+          mix: 58
+          length: 95
+          wet_modify: 76
+          clock: 127
+          loop_modify: 64
+          ramp_speed: 0
+          wet_channel: 0
+          routing: 1
+          loop: 1
+          wet_clock: 6
+          loop_clock_division: 7
+          dip_r_trails: 127
+      - id: broken-tape-memories
+        name: Broken Tape Memories
+        preset_number: 5
+        parameters:
+          time: 55
+          mix: 30
+          length: 78
+          wet_modify: 110
+          clock: 48
+          loop_modify: 115
+          ramp_speed: 12
+          wet_channel: 1
+          routing: 1
+          loop: 1
+          wet_clock: 3
+          loop_clock_division: 3
+          dip_l_bounce: 127
+          dip_l_sweep: 0
+          dip_r_trails: 127
+      - id: second-guitarist
+        name: Second Guitarist
+        preset_number: 6
+        parameters:
+          time: 52
+          mix: 22
+          length: 96
+          wet_modify: 68
+          clock: 54
+          loop_modify: 82
+          ramp_speed: 0
+          wet_channel: 1
+          routing: 1
+          loop: 1
+          wet_clock: 3
+          loop_clock_division: 5
+          dip_r_trails: 127
+          dip_r_smooth: 127
+
+  - id: mc6
+    manufacturer: Morningstar
+    model: MC6
+    type: controller
+    config:
+      type: controller
+      midi_channel: 1
+      scenes:
+        clean:
+          description: Clean Fender with second guitarist
+          presets:
+            hx-stomp: princeton
+            mood: second-guitarist
+        crunch:
+          description: British crunch with ambient pad
+          presets:
+            hx-stomp: marshall
+            mood: ambient-pad-machine
+        lead:
+          description: High gain lead with broken tape
+          presets:
+            hx-stomp: boogie-pb
+            mood: broken-tape-memories
+        wacky:
+          description: BOC lead into sigur ros drone
+          presets:
+            hx-stomp: doogie-pb
+            mood: sigur-ros-drone
+      banks:
+        - bank: 1
+          name: Main Rig
+          switches:
+            A:
+              scene: clean
+            B:
+              scene: crunch
+            C:
+              scene: lead
+            D:
+              scene: wacky
