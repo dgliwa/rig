@@ -1,7 +1,10 @@
 chain:
-  - pedal: hx-stomp
+  - device: hx-stomp
     position: 1
     loop: front
-  - pedal: mood
+  - device: mood
     position: 2
     loop: front
+  - device: mc6
+    position: 3
+    loop: none
