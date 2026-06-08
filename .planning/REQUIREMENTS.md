@@ -45,23 +45,23 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SCHEMA-01 | — | Pending |
-| SCHEMA-02 | — | Pending |
-| SCHEMA-03 | — | Pending |
-| SCHEMA-04 | — | Pending |
-| PRESET-01 | — | Pending |
-| PRESET-02 | — | Pending |
-| PRESET-03 | — | Pending |
-| PRESET-04 | — | Pending |
-| SCENE-01 | — | Pending |
-| SCENE-02 | — | Pending |
-| SCENE-03 | — | Pending |
+| SCHEMA-01 | Phase 2 | Pending |
+| SCHEMA-02 | Phase 2 | Pending |
+| SCHEMA-03 | Phase 2 | Pending |
+| SCHEMA-04 | Phase 2 | Pending |
+| PRESET-01 | Phase 3 | Pending |
+| PRESET-02 | Phase 3 | Pending |
+| PRESET-03 | Phase 3 | Pending |
+| PRESET-04 | Phase 3 | Pending |
+| SCENE-01 | Phase 4 | Pending |
+| SCENE-02 | Phase 4 | Pending |
+| SCENE-03 | Phase 4 | Pending |
 
 **Coverage:**
 - v1.2 requirements: 11 total
-- Mapped to phases: 0
-- Unmapped: 11 ⚠️ (pending roadmap)
+- Mapped to phases: 11
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-06-08*
-*Last updated: 2026-06-08 after initial definition*
+*Last updated: 2026-06-08 — phase assignments added*

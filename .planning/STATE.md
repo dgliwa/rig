@@ -2,11 +2,11 @@
 gsd_state_version: 1.0
 milestone: v1.2
 milestone_name: Flesh Out the Rig
-status: planning
-last_updated: "2026-06-08T16:20:07.828Z"
+status: active
+last_updated: "2026-06-08T00:00:00.000Z"
 last_activity: 2026-06-08
 progress:
-  total_phases: 0
+  total_phases: 3
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -20,7 +20,7 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-08)
 
 **Core value:** A single `rig validate` confirms the config repo is consistent and ready to apply
-**Current focus:** Planning v1.2 — Single-File Migration
+**Current focus:** Phase 2 — Schema Migration
 
 ## v1.1 Shipped
 
@@ -49,7 +49,7 @@ Decisions are logged in PROJECT.md Key Decisions table.
 
 ### Pending Todos
 
-- Start v1.2 via `/gsd-new-milestone`
+- Run `/gsd-plan-phase 2` to plan Schema Migration
 
 ### Blockers/Concerns
 
@@ -58,12 +58,13 @@ None.
 ## Session Continuity
 
 Last session: 2026-06-08
-Stopped at: v1.1 milestone archived — ready to start v1.2
+Stopped at: v1.2 roadmap created — Phase 2 is next
 Resume file: None
 
 ## Current Position
 
-Phase: Not started (defining requirements)
+Phase: 2 — Schema Migration
 Plan: —
-Status: Defining requirements
-Last activity: 2026-06-08 — Milestone v1.2 started
+Status: Not started
+Progress: [ ] Phase 2 / [ ] Phase 3 / [ ] Phase 4
+Last activity: 2026-06-08 — v1.2 roadmap created
