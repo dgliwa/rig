@@ -1,7 +1,7 @@
 name: crunch
-description: British crunch with subtle shimmer
+description: British crunch with ambient pad
 mc6_bank: 1
 mc6_switch: B
 presets:
   hx-stomp: marshall
-  mood: subtle-shimmer
+  mood: ambient-pad-machine

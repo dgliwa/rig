@@ -1,7 +1,7 @@
 name: wacky
-description: BOC lead into full glitch chaos
+description: BOC lead into sigur ros drone
 mc6_bank: 1
 mc6_switch: D
 presets:
   hx-stomp: doogie-pb
-  mood: glitch-storm
+  mood: sigur-ros-drone
