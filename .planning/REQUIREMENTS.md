@@ -1,0 +1,50 @@
+# Requirements: Derek's Guitar Rig
+
+**Defined:** 2026-06-07
+**Core Value:** A single `rig validate` should confirm the config repo is consistent and ready to apply — no guessing, no manual cross-referencing.
+
+## v1.2 Requirements
+
+Requirements for milestone v1.2 — Architecture Migration. Each maps to roadmap phases.
+
+### Migration
+
+- [ ] **MIGS-01**: `pedals/` directory is renamed to `devices/` so rig-cli uses its preferred path (avoids deprecated `pedals/` fallback)
+- [ ] **MIGS-02**: `signal-chain.yaml` uses `device:` field for all chain entries (replaces legacy `pedal:` alias)
+- [ ] **MIGS-03**: In-progress uncommitted changes are committed cleanly — mc6.yaml moved from repo root to `devices/`, Mood presets revised with actual MIDI parameters, scenes revised (descriptions + preset references)
+- [ ] **MIGS-04**: `rig validate` passes with zero errors against current local rig-cli install
+
+## Future Requirements
+
+### Expansion (v1.3+)
+
+- **EXP-01**: Add new scenes for additional musical contexts
+- **EXP-02**: Add new device definitions as gear is added to rig
+- **EXP-03**: Wire `rig generate mc6` into workflow to produce MC6 JSON from scenes
+
+## Out of Scope
+
+| Feature | Reason |
+|---------|--------|
+| Adding new scenes | Scope is migration only — content stays, structure transforms |
+| New pedal/device additions | No new gear being added in this milestone |
+| rig-cli source changes | This is a rig config repo milestone only |
+| MC6 JSON generation | Deferred — validate first, generate in v1.3 |
+
+## Traceability
+
+| Requirement | Phase | Status |
+|-------------|-------|--------|
+| MIGS-01 | Phase 1 | Pending |
+| MIGS-02 | Phase 1 | Pending |
+| MIGS-03 | Phase 1 | Pending |
+| MIGS-04 | Phase 1 | Pending |
+
+**Coverage:**
+- v1.2 requirements: 4 total
+- Mapped to phases: 4
+- Unmapped: 0 ✓
+
+---
+*Requirements defined: 2026-06-07*
+*Last updated: 2026-06-07 after initial definition*
