@@ -8,7 +8,7 @@ Infrastructure-as-Code configuration for a personal guitar rig (HX Stomp + Mood 
 
 A single `rig validate` should confirm the config repo is consistent and ready to apply — no guessing, no manual cross-referencing.
 
-## Current Milestone: v1.2 Architecture Migration
+## Current Milestone: v1.1 Architecture Migration
 
 **Goal:** Migrate rig configs to match rig-cli's current (post-v1.1) preferred structure so `rig validate` passes cleanly and the repo is free of deprecated conventions.
 
@@ -41,7 +41,7 @@ A single `rig validate` should confirm the config repo is consistent and ready t
 
 ## Context
 
-- rig-cli is at v1.1 (plugin architecture shipped 2026-06-07); v1.2 is next
+- rig-cli is at v1.1 (plugin architecture shipped 2026-06-07); v1.1 is next
 - The loader prefers `devices/` over `pedals/` and has a TODO to drop `pedals/` support
 - Signal chain `pedal:` field still works via AliasChoices but `device:` is canonical
 - Uncommitted changes already exist: mc6.yaml moved from root → pedals/, Mood presets updated (actual MIDI parameters from physical pedal), scene descriptions revised
@@ -56,7 +56,7 @@ A single `rig validate` should confirm the config repo is consistent and ready t
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Version rig repo at v1.2 to match rig-cli counterpart | Keeps version numbers in sync across repos | — Pending |
+| Version rig repo at v1.1 to match rig-cli counterpart | Keeps version numbers in sync across repos | — Pending |
 | Rename pedals/ → devices/ rather than waiting | rig-cli TODOs signal pedals/ will eventually break | — Pending |
 
 ## Evolution
@@ -77,4 +77,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-06-07 after milestone v1.2 initialized*
+*Last updated: 2026-06-07 after milestone v1.1 initialized*

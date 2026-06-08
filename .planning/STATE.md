@@ -1,6 +1,6 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.2
+milestone: v1.1
 milestone_name: Architecture Migration
 status: planned
 last_updated: "2026-06-07"
@@ -52,7 +52,7 @@ Decisions are logged in PROJECT.md Key Decisions table.
 Recent decisions affecting current work:
 
 - Rename `pedals/` → `devices/` proactively (rig-cli TODO signals `pedals/` will eventually break)
-- Version rig repo at v1.2 to match rig-cli counterpart
+- Version rig repo at v1.1 to match rig-cli counterpart
 
 ### Pending Todos
 

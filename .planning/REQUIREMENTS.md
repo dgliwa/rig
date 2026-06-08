@@ -3,9 +3,9 @@
 **Defined:** 2026-06-07
 **Core Value:** A single `rig validate` should confirm the config repo is consistent and ready to apply — no guessing, no manual cross-referencing.
 
-## v1.2 Requirements
+## v1.1 Requirements
 
-Requirements for milestone v1.2 — Architecture Migration. Each maps to roadmap phases.
+Requirements for milestone v1.1 — Architecture Migration. Each maps to roadmap phases.
 
 ### Migration
 
@@ -41,7 +41,7 @@ Requirements for milestone v1.2 — Architecture Migration. Each maps to roadmap
 | MIGS-04 | Phase 1 | Pending |
 
 **Coverage:**
-- v1.2 requirements: 4 total
+- v1.1 requirements: 4 total
 - Mapped to phases: 4
 - Unmapped: 0 ✓
 

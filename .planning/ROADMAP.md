@@ -2,11 +2,11 @@
 
 ## Milestones
 
-- 🚧 **v1.2 Architecture Migration** - Phase 1 (in progress)
+- 🚧 **v1.1 Architecture Migration** - Phase 1 (in progress)
 
 ## Phases
 
-### 🚧 v1.2 Architecture Migration (In Progress)
+### 🚧 v1.1 Architecture Migration (In Progress)
 
 **Milestone Goal:** Migrate rig configs to rig-cli's current preferred structure so `rig validate` passes cleanly with no deprecated conventions.
 
@@ -29,4 +29,4 @@
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
-| 1. Migrate & Validate | v1.2 | 0/1 | Planned | - |
+| 1. Migrate & Validate | v1.1 | 0/1 | Planned | - |
