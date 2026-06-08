@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v1.2
 milestone_name: Flesh Out the Rig
-status: Not started
-stopped_at: Phase 2 context gathered
-last_updated: "2026-06-08T16:47:08.959Z"
-last_activity: 2026-06-08 — v1.2 roadmap created
+status: In progress
+stopped_at: Phase 2 complete
+last_updated: "2026-06-08"
+last_activity: 2026-06-08 — Phase 2 schema migration complete
 progress:
   total_phases: 3
-  completed_phases: 0
-  total_plans: 0
-  completed_plans: 0
-  percent: 0
+  completed_phases: 1
+  total_plans: 1
+  completed_plans: 1
+  percent: 33
 ---
 
 # Project State
@@ -21,7 +21,7 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-08)
 
 **Core value:** A single `rig validate` confirms the config repo is consistent and ready to apply
-**Current focus:** Phase 2 — Schema Migration
+**Current focus:** Phase 3 — CBA Devices & Presets
 
 ## v1.1 Shipped
 
@@ -50,7 +50,7 @@ Decisions are logged in PROJECT.md Key Decisions table.
 
 ### Pending Todos
 
-- Run `/gsd-plan-phase 2` to plan Schema Migration
+- Run `/gsd-plan-phase 3` to plan CBA Devices & Presets
 
 ### Blockers/Concerns
 
@@ -58,14 +58,14 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-06-08T16:47:08.954Z
-Stopped at: Phase 2 context gathered
-Resume file: .planning/phases/02-schema-migration/02-CONTEXT.md
+Last session: 2026-06-08
+Stopped at: Phase 2 complete (commit f453ff2)
+Resume file: .planning/phases/02-schema-migration/02-01-SUMMARY.md
 
 ## Current Position
 
-Phase: 2 — Schema Migration
+Phase: 3 — CBA Devices & Presets
 Plan: —
 Status: Not started
-Progress: [ ] Phase 2 / [ ] Phase 3 / [ ] Phase 4
-Last activity: 2026-06-08 — v1.2 roadmap created
+Progress: [x] Phase 2 / [ ] Phase 3 / [ ] Phase 4
+Last activity: 2026-06-08 — Phase 2 schema migration complete

@@ -18,7 +18,7 @@ See: `.planning/milestones/v1.1-ROADMAP.md`
 
 ### v1.2 Flesh Out the Rig
 
-- [ ] **Phase 2: Schema Migration** — Collapse all YAML files into single `rig.yaml`; `rig validate` reports real counts
+- [x] **Phase 2: Schema Migration** — Collapse all YAML files into single `rig.yaml`; `rig validate` reports real counts (complete 2026-06-08)
 - [ ] **Phase 3: CBA Devices & Presets** — Add Wombtone and Brothers devices with tuned presets; audit Mood presets
 - [ ] **Phase 4: Real Scenes** — Build scenes that use all devices meaningfully with accurate MC6 assignments
 
@@ -61,6 +61,6 @@ See: `.planning/milestones/v1.1-ROADMAP.md`
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
 | 1. Migrate & Validate | v1.1 | 1/1 | Complete | 2026-06-07 |
-| 2. Schema Migration | v1.2 | 0/? | Not started | - |
+| 2. Schema Migration | v1.2 | 1/1 | Complete | 2026-06-08 |
 | 3. CBA Devices & Presets | v1.2 | 0/? | Not started | - |
 | 4. Real Scenes | v1.2 | 0/? | Not started | - |
