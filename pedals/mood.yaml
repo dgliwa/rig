@@ -6,63 +6,76 @@ config:
   type: chase_bliss
   midi_channel: 2
 presets:
-  - id: ambient-bloom
-    name: Ambient Bloom
+  - id: sigur-ros-drone
+    name: Sigur Ros Drone
     preset_number: 3
     parameters:
-      time: 85
-      mix: 70
-      length: 80
-      wet_modify: 35
-      clock: 55
-      wet_bypass: 127
-      micro_bypass: 0
-    notes: Long lush delay, wet channel active, micro looper bypassed
-  - id: subtle-shimmer
-    name: Subtle Shimmer
+      time: 70
+      mix: 35
+      length: 120
+      wet_modify: 95
+      clock: 42
+      loop_modify: 105
+      ramp_speed: 0
+      wet_channel: 0
+      routing: 1
+      loop: 2
+      wet_clock: 6
+      loop_clock_division: 5
+      dip_r_spread: 127
+      dip_r_trails: 127
+      dip_r_smooth: 127
+  - id: ambient-pad-machine
+    name: Ambient Pad Machine
     preset_number: 4
     parameters:
-      time: 45
-      mix: 50
-      length: 55
-      wet_modify: 65
-      clock: 70
-      wet_bypass: 127
-      micro_bypass: 0
-    notes: Shorter delay with shimmer modulation
-  - id: feedback-drone
-    name: Feedback Drone
+      time: 95        # wet/reverb TIME ~2-3 o'clock
+      mix: 58         # IN+loop mix ~11-12 o'clock
+      length: 95      # loop LENGTH ~2-3 o'clock (smooth pad bed)
+      wet_modify: 76  # reverb MODIFY ~1 o'clock
+      clock: 127      # 64k sample rate
+      loop_modify: 64 # loop MODIFY noon (normal forward playback)
+      ramp_speed: 0
+      wet_channel: 0  # both channels on
+      routing: 1      # IN+loop (reverb processes live + loop)
+      loop: 1         # Tape mode
+      wet_clock: 6    # Reverb mode (not frozen)
+      loop_clock_division: 7
+      dip_r_trails: 127
+  - id: broken-tape-memories
+    name: Broken Tape Memories
     preset_number: 5
     parameters:
-      time: 120
-      mix: 105
-      length: 110
-      wet_modify: 100
-      clock: 25
-      ramp_speed: 90
-      wet_bypass: 127
-      micro_bypass: 127
-      dip_l_1: 127
-      dip_l_2: 0
-    notes: Slow clock creates pitch artifacts; both channels active
-    tags:
-      - wacky
-  - id: glitch-storm
-    name: Glitch Storm
+      time: 55
+      mix: 30
+      length: 78
+      wet_modify: 110
+      clock: 48
+      loop_modify: 115
+      ramp_speed: 12
+      wet_channel: 1
+      routing: 1
+      loop: 1
+      wet_clock: 3
+      loop_clock_division: 3
+      dip_l_bounce: 127
+      dip_l_sweep: 0
+      dip_r_trails: 127
+  - id: second-guitarist
+    name: Second Guitarist
     preset_number: 6
     parameters:
-      time: 12
-      mix: 115
-      length: 18
-      wet_modify: 127
-      clock: 120
-      micro_looper_modify: 127
-      ramp_speed: 127
-      wet_bypass: 127
-      micro_bypass: 127
-      dip_l_1: 127
-      dip_l_2: 127
-      dip_r_1: 127
-    notes: Granular glitch territory; max everything, very fast clock
-    tags:
-      - wacky
+      time: 52
+      mix: 22
+      length: 96
+      wet_modify: 68
+      clock: 54
+      loop_modify: 82
+      ramp_speed: 0
+      wet_channel: 1
+      routing: 1
+      loop: 1
+      wet_clock: 3
+      loop_clock_division: 5
+      dip_r_trails: 127
+      dip_r_smooth: 127
