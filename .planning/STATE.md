@@ -2,9 +2,10 @@
 gsd_state_version: 1.0
 milestone: v1.2
 milestone_name: Flesh Out the Rig
-status: active
-last_updated: "2026-06-08T00:00:00.000Z"
-last_activity: 2026-06-08
+status: Not started
+stopped_at: Phase 2 context gathered
+last_updated: "2026-06-08T16:47:08.959Z"
+last_activity: 2026-06-08 — v1.2 roadmap created
 progress:
   total_phases: 3
   completed_phases: 0
@@ -57,9 +58,9 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-06-08
-Stopped at: v1.2 roadmap created — Phase 2 is next
-Resume file: None
+Last session: 2026-06-08T16:47:08.954Z
+Stopped at: Phase 2 context gathered
+Resume file: .planning/phases/02-schema-migration/02-CONTEXT.md
 
 ## Current Position
 
