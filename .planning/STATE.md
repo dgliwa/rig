@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v1.2
 milestone_name: Flesh Out the Rig
-status: In progress
-stopped_at: Phase 2 complete
-last_updated: "2026-06-08"
-last_activity: 2026-06-08 — Phase 2 schema migration complete
+status: executing
+stopped_at: Phase 2 complete (commit f453ff2)
+last_updated: "2026-06-09T12:14:12.351Z"
+last_activity: 2026-06-09
 progress:
   total_phases: 3
-  completed_phases: 1
-  total_plans: 1
-  completed_plans: 1
-  percent: 33
+  completed_phases: 2
+  total_plans: 2
+  completed_plans: 2
+  percent: 67
 ---
 
 # Project State
@@ -21,7 +21,7 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-08)
 
 **Core value:** A single `rig validate` confirms the config repo is consistent and ready to apply
-**Current focus:** Phase 3 — CBA Devices & Presets
+**Current focus:** Phase 03 — cba-devices-presets
 
 ## v1.1 Shipped
 
@@ -64,8 +64,8 @@ Resume file: .planning/phases/02-schema-migration/02-01-SUMMARY.md
 
 ## Current Position
 
-Phase: 3 — CBA Devices & Presets
-Plan: —
-Status: Not started
-Progress: [x] Phase 2 / [ ] Phase 3 / [ ] Phase 4
-Last activity: 2026-06-08 — Phase 2 schema migration complete
+Phase: 4
+Plan: Not started
+Status: Executing Phase 03
+Progress: [x] Phase 2 / [⏳] Phase 3 / [ ] Phase 4
+Last activity: 2026-06-09

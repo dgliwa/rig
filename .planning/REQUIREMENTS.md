@@ -14,10 +14,10 @@
 
 ### CBA Devices & Presets
 
-- [ ] **PRESET-01**: Mood MkII presets reviewed and verified as real, playable configurations
-- [ ] **PRESET-02**: Billy Strings Wombtone added as a new CBA device with at least one tuned preset
-- [ ] **PRESET-03**: Brothers added as a new CBA device with at least one tuned preset (AM style)
-- [ ] **PRESET-04**: Preset parameters annotated with sonic intent where values are non-obvious
+- [x] **PRESET-01**: Mood MkII presets reviewed and verified as real, playable configurations
+- [x] **PRESET-02**: Billy Strings Wombtone added as a new CBA device with at least one tuned preset
+- [x] **PRESET-03**: Brothers added as a new CBA device with at least one tuned preset (AM style)
+- [x] **PRESET-04**: Preset parameters annotated with sonic intent where values are non-obvious
 
 ### Real Scenes
 
@@ -49,15 +49,16 @@
 | SCHEMA-02 | Phase 2 | Pending |
 | SCHEMA-03 | Phase 2 | Pending |
 | SCHEMA-04 | Phase 2 | Pending |
-| PRESET-01 | Phase 3 | Pending |
-| PRESET-02 | Phase 3 | Pending |
-| PRESET-03 | Phase 3 | Pending |
-| PRESET-04 | Phase 3 | Pending |
+| PRESET-01 | Phase 3 | Complete |
+| PRESET-02 | Phase 3 | Complete |
+| PRESET-03 | Phase 3 | Complete |
+| PRESET-04 | Phase 3 | Complete |
 | SCENE-01 | Phase 4 | Pending |
 | SCENE-02 | Phase 4 | Pending |
 | SCENE-03 | Phase 4 | Pending |
 
 **Coverage:**
+
 - v1.2 requirements: 11 total
 - Mapped to phases: 11
 - Unmapped: 0 ✓
