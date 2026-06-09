@@ -585,83 +585,75 @@ devices:
           min: 0
           max: 127
     presets:
-      - id: sigur-ros-drone
-        name: Sigur Ros Drone
+      - id: liquid-ambient-wash
+        name: Liquid Ambient Wash
         preset_number: 3
-        notes: Ethereal ambient drone with granular texture — inspired by Sigur Rós's atmospheric soundscapes
+        notes: "Frozen pad under clean Fender tone — doc recipe ①a. Freeze a chord into an infinite pad, solo dry over it. LATCH keeps freeze hands-free."
         parameters:
-          time: 70    # Moderate time for ambient wash
-          mix: 35     # Preserve dry signal for clarity
-          length: 120 # Long buffer for sustained drones
-          wet_modify: 95  # Heavy modulation for evolving texture
-          clock: 42       # Moderate granular density for texture
-          loop_modify: 105 # Heavy loop manipulation for glitch
-          ramp_speed: 0    # No ramping — static texture
-          wet_channel: 0   # reverb — ambient space
-          routing: 1       # wet_and_in — blend dry with effected
-          loop: 2          # stretch — sustained drone loops
-          wet_clock: 6     # half — slow modulation clock
-          loop_clock_division: 5 # quarter — moderate loop division
-          dip_r_spread: 127 # Full stereo spread for immersive width
-          dip_r_trails: 127 # Allow tails on bypass
-          dip_r_smooth: 127 # Smooth transitions between states
-      - id: ambient-pad-machine
-        name: Ambient Pad Machine
+          time: 95        # 2–3 o'clock — long reverb decay
+          mix: 48         # 11 o'clock — subtle wet blend, preserves dry signal
+          length: 64      # noon — neutral, looper not primary here
+          wet_modify: 80  # 1 o'clock — medium smear/diffusion
+          clock: 127      # 64k (fully CW) — clean/hi-fi, no aliasing
+          loop_modify: 64 # noon — normal forward playback
+          ramp_speed: 0   # No ramping — static pad when frozen
+          wet_channel: 0  # reverb — ambient wash mode
+          routing: 0      # in — wet processes live signal only
+          loop: 1         # tape — warm loop texture if looper engaged
+          dip_r_trails: 127 # TRAILS on — wet fades smoothly after bypass
+          dip_r_latch: 127  # LATCH on — freeze stays hands-free after hold
+      - id: dub-tape-delay
+        name: Dub Tape Delay
         preset_number: 4
-        notes: Shimmering ambient pad with max granular density — dense texture generator for backgrounds
+        notes: "Rhythmic dub delay texture under crunch — doc recipe ②. High feedback just below runaway; roll CLOCK down live to pitch-drop repeats into dub bloops."
         parameters:
-          time: 95      # Long time for sustained pads
-          mix: 58       # Balanced wet/dry blend
-          length: 95    # Long buffer for layered loops
-          wet_modify: 76 # Moderate modulation for shimmer
-          clock: 127    # Max granular density for shimmer
-          loop_modify: 64 # Moderate loop manipulation
-          ramp_speed: 0  # No ramping — steady pad
-          wet_channel: 0 # reverb — ambient space
-          routing: 1     # wet_and_in — blend dry with effected
-          loop: 1        # tape — warm, saturated loop texture
-          wet_clock: 6   # half — slow modulation clock
-          loop_clock_division: 7 # whole — slowest loop division
-          dip_r_trails: 127 # Allow trails for pad decay
-      - id: broken-tape-memories
-        name: Broken Tape Memories
+          time: 64        # noon — medium delay time
+          mix: 64         # noon — balanced wet/dry
+          length: 64      # noon — neutral
+          wet_modify: 95  # 2–3 o'clock — high feedback, just below runaway
+          clock: 50       # ~24–32k — slight warmth/tape character (roll CW for clean, CCW for bloop)
+          loop_modify: 64 # noon — normal playback
+          ramp_speed: 0   # No ramping — manual CLOCK sweep is the performance move
+          wet_channel: 1  # delay — rhythmic repeats
+          routing: 0      # in — wet processes live signal only
+          loop: 1         # tape — warm loop bed
+          dip_r_trails: 127 # TRAILS on — delay fades on bypass
+      - id: granular-bloop-cloud
+        name: Granular Bloop Cloud
         preset_number: 5
-        notes: Degraded tape texture with warble and bounce — lo-fi, unstable character for melancholic passages
+        notes: "Slip-mode granular re-sampler — doc recipe ④. Single notes shatter into re-pitched grains. Hold left footswitch to freeze a grain cloud and play over it."
         parameters:
-          time: 55      # Medium-short time for defined repeats
-          mix: 30       # Preserve dry clarity with texture underneath
-          length: 78    # Medium buffer length
-          wet_modify: 110 # Heavy modulation for warble
-          clock: 48        # Moderate granular density
-          loop_modify: 115 # Aggressive loop manipulation for degradation
-          ramp_speed: 12   # Slow ramp for subtle evolution
-          wet_channel: 1   # delay — rhythmic repeats
-          routing: 1       # wet_and_in
-          loop: 1          # tape — degraded tape texture
-          wet_clock: 3     # eighth_triplet — triplet rhythm for warble
-          loop_clock_division: 3 # eighth_triplet — triplet loop division
-          dip_l_bounce: 127 # Enable bounce mode for ping-pong
-          dip_l_sweep: 0    # Center sweep position
-          dip_r_trails: 127 # Allow trails for decay
-      - id: second-guitarist
-        name: Second Guitarist
+          time: 45        # 10–11 o'clock — fast refresh rate, more grain scramble
+          mix: 64         # noon — even wet/dry balance
+          length: 64      # noon — neutral
+          wet_modify: 70  # Just off-center — grains slightly slowed/reversed for bloopy character
+          clock: 45       # ~16–32k — some aliasing adds grit to grains over high-gain lead
+          loop_modify: 64 # noon — neutral loop playback
+          ramp_speed: 0   # No ramping
+          wet_channel: 2  # slip — granular re-sampler mode
+          routing: 0      # in — processes live signal
+          loop: 1         # tape — warm loop texture
+          dip_r_trails: 127 # TRAILS on — grain cloud fades on bypass
+      - id: reverse-stretch-drift
+        name: Reverse-Stretch Drift Cloud
         preset_number: 6
-        notes: Subtle doubling effect that sits behind the dry signal — creates the illusion of a second guitarist
+        notes: "Smeared reversed time-stretch cloud — doc recipe ⑦ (Tier 2). Chord becomes a drifting, reversed, pitch-stretched cloud. BOUNCE + CLOCK ramp = self-generating drone. Wacky territory."
         parameters:
-          time: 52     # Short to medium decay for tight doubling
-          mix: 22       # Low mix — subtle thickening, not obvious effect
-          length: 96    # Long buffer for layered captures
-          wet_modify: 68 # Moderate modulation for movement
-          clock: 54     # Medium granular density
-          loop_modify: 82 # Moderate loop manipulation
-          ramp_speed: 0   # No ramping — consistent texture
-          wet_channel: 1  # delay mode for rhythmic doubling
-          routing: 1      # wet_and_in
-          loop: 1         # tape mode for warmth
-          wet_clock: 3    # eighth_triplet
-          loop_clock_division: 5 # quarter — moderate division
-          dip_r_trails: 127 # Allow trails for natural decay
-          dip_r_smooth: 127 # Smooth transitions
+          time: 95        # 2–3 o'clock — long reverb decay washing over the loop cloud
+          mix: 64         # noon — blend frozen reverb with loop
+          length: 30      # Small — small slice size for stretch mode granular feel
+          wet_modify: 80  # Moderate reverb smear/diffusion
+          clock: 127      # 64k — clean input into stretch processor
+          loop_modify: 25 # Off-center/negative — stretch + reverse playback direction
+          ramp_speed: 30  # Slow auto-ramp for gradual pitch drift (BOUNCE must be on)
+          wet_channel: 0  # reverb — washes over the stretch cloud
+          routing: 2      # wet (loop only) — reverb only touches loop, live stays dry
+          loop: 2         # stretch — time-stretch slices
+          dip_l_bounce: 127 # BOUNCE on — CLOCK ramps on waveform for generative drift
+          dip_l_clock: 127  # CLOCK ramp dip — auto-modulates clock for pitch drift
+          dip_r_trails: 127 # TRAILS on — cloud fades on bypass
+          dip_r_latch: 127  # LATCH on — freeze stays hands-free
+          dip_r_smooth: 127 # SMOOTH on — fluid CLOCK glides (removes stepping)
 
   - id: mc6
     manufacturer: Morningstar
@@ -672,25 +664,30 @@ devices:
       midi_channel: 1
       scenes:
         clean:
-          description: Clean Fender with second guitarist
+          description: "Clean Fender with phaser vibe and doubling"
           presets:
             hx-stomp: princeton
-            mood: second-guitarist
+            billy-strings-wombtone: slow-vibe
+            brothers: am-crunch
+            mood: liquid-ambient-wash
         crunch:
-          description: British crunch with ambient pad
+          description: "British crunch with Brothers OD and ambient pad"
           presets:
             hx-stomp: marshall
-            mood: ambient-pad-machine
+            brothers: am-crunch
+            mood: dub-tape-delay
         lead:
-          description: High gain lead with broken tape
+          description: "High gain Boogie lead with Brothers boost and broken tape"
           presets:
             hx-stomp: boogie-pb
-            mood: broken-tape-memories
+            brothers: am-crunch
+            mood: granular-bloop-cloud
         wacky:
-          description: BOC lead into sigur ros drone
+          description: "BOC saturated lead with tremolo and Sigur Rós drone"
           presets:
             hx-stomp: doogie-pb
-            mood: sigur-ros-drone
+            billy-strings-wombtone: trem-pulse
+            mood: reverse-stretch-drift
       banks:
         - bank: 1
           name: Main Rig
