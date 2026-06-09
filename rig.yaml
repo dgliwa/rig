@@ -1,6 +1,287 @@
 name: Derek's Rig
-description: MC6 controller → Mood MkII → HX Stomp
+description: Brothers → Wombtone → HX Stomp → Mood MkII (MC6 controller)
 devices:
+  - id: brothers
+    manufacturer: Chase Bliss Audio
+    model: Brothers AM
+    type: digital
+    config:
+      type: chase_bliss
+      midi_channel: 4
+      controls:
+        - name: gain_2
+          type: knob
+          midi_cc: 14
+          min: 0
+          max: 127
+        - name: volume_2
+          type: knob
+          midi_cc: 15
+          min: 0
+          max: 127
+        - name: gain_1
+          type: knob
+          midi_cc: 16
+          min: 0
+          max: 127
+        - name: tone_2
+          type: knob
+          midi_cc: 17
+          min: 0
+          max: 127
+        - name: volume_1
+          type: knob
+          midi_cc: 18
+          min: 0
+          max: 127
+        - name: tone_1
+          type: knob
+          midi_cc: 19
+          min: 0
+          max: 127
+        - name: presence_2
+          type: knob
+          midi_cc: 27
+          min: 0
+          max: 127
+        - name: presence_1
+          type: knob
+          midi_cc: 29
+          min: 0
+          max: 127
+        - name: gain_2_type
+          type: toggle
+          midi_cc: 21
+          min: 0
+          max: 3
+          positions:
+            - boost
+            - od
+            - dist
+        - name: treble_boost
+          type: toggle
+          midi_cc: 22
+          min: 0
+          max: 3
+          positions:
+            - full_sun
+            - off
+            - half_sun
+        - name: gain_1_type
+          type: toggle
+          midi_cc: 23
+          min: 0
+          max: 3
+          positions:
+            - dist
+            - od
+            - boost
+        - name: dip_volume_1
+          type: dipswitch
+          midi_cc: 61
+          min: 0
+          max: 1
+        - name: dip_volume_2
+          type: dipswitch
+          midi_cc: 62
+          min: 0
+          max: 1
+        - name: dip_gain_1
+          type: dipswitch
+          midi_cc: 63
+          min: 0
+          max: 1
+        - name: dip_gain_2
+          type: dipswitch
+          midi_cc: 64
+          min: 0
+          max: 1
+        - name: dip_tone_1
+          type: dipswitch
+          midi_cc: 65
+          min: 0
+          max: 1
+        - name: dip_tone_2
+          type: dipswitch
+          midi_cc: 66
+          min: 0
+          max: 1
+        - name: dip_sweep
+          type: dipswitch
+          midi_cc: 67
+          min: 0
+          max: 1
+        - name: dip_polarity
+          type: dipswitch
+          midi_cc: 68
+          min: 0
+          max: 1
+        - name: dip_hi_gain_1
+          type: dipswitch
+          midi_cc: 71
+          min: 0
+          max: 1
+        - name: dip_hi_gain_2
+          type: dipswitch
+          midi_cc: 72
+          min: 0
+          max: 1
+        - name: dip_motobyp_1
+          type: dipswitch
+          midi_cc: 73
+          min: 0
+          max: 1
+        - name: dip_motobyp_2
+          type: dipswitch
+          midi_cc: 74
+          min: 0
+          max: 1
+        - name: dip_pres_link_1
+          type: dipswitch
+          midi_cc: 75
+          min: 0
+          max: 1
+        - name: dip_pres_link_2
+          type: dipswitch
+          midi_cc: 76
+          min: 0
+          max: 1
+        - name: dip_master
+          type: dipswitch
+          midi_cc: 77
+          min: 0
+          max: 1
+        - name: channel_1_bypass
+          type: switch
+          midi_cc: 102
+          min: 0
+          max: 127
+        - name: channel_2_bypass
+          type: switch
+          midi_cc: 103
+          min: 0
+          max: 127
+    presets:
+      - id: am-crunch
+        name: AM Crunch
+        preset_number: 1
+        notes: Arctic Monkeys-style edge-of-breakup crunch (Alex Turner vibe)
+        parameters:
+          gain_2: 65     # Moderate OD gain — pushed but not fuzzy
+          volume_2: 70   # Slight boost over unity
+          gain_1: 30     # Light boost gain
+          volume_1: 55   # Unity-ish
+          tone_2: 60     # Slightly bright
+          tone_1: 50     # Neutral
+          presence_2: 55
+          presence_1: 50
+          gain_2_type: 1   # od — smooth overdrive
+          treble_boost: 2  # half_sun — subtle treble lift
+          gain_1_type: 2   # boost — clean boost side
+
+  - id: billy-strings-wombtone
+    manufacturer: Chase Bliss Audio
+    model: Wombtone MkII
+    type: digital
+    config:
+      type: chase_bliss
+      midi_channel: 3
+      controls:
+        - name: feed
+          type: knob
+          midi_cc: 14
+          min: 0
+          max: 127
+        - name: volume
+          type: knob
+          midi_cc: 15
+          min: 0
+          max: 127
+        - name: mix
+          type: knob
+          midi_cc: 16
+          min: 0
+          max: 127
+        - name: rate
+          type: knob
+          midi_cc: 17
+          min: 0
+          max: 127
+        - name: depth
+          type: knob
+          midi_cc: 18
+          min: 0
+          max: 127
+        - name: form
+          type: knob
+          midi_cc: 19
+          min: 0
+          max: 127
+        - name: ramp
+          type: knob
+          midi_cc: 20
+          min: 0
+          max: 127
+        - name: clock_division
+          type: toggle
+          midi_cc: 21
+          min: 0
+          max: 5
+          positions:
+            - whole
+            - half
+            - quarter_triplet
+            - quarter
+            - eighth
+            - sixteenth
+        - name: midi_clock_ignore
+          type: switch
+          midi_cc: 51
+          min: 0
+          max: 127
+        - name: tap_tempo
+          type: switch
+          midi_cc: 93
+          min: 0
+          max: 127
+        - name: expression_over_midi
+          type: switch
+          midi_cc: 100
+          min: 0
+          max: 127
+        - name: bypass
+          type: switch
+          midi_cc: 102
+          min: 0
+          max: 127
+    presets:
+      - id: slow-vibe
+        name: Slow Vibe
+        preset_number: 1
+        notes: Deep, slow vibrato for ambient swells and pads
+        parameters:
+          feed: 50     # Moderate feedback for smooth warbling
+          volume: 60   # Slight boost
+          mix: 70      # Heavy wet blend for pronounced effect
+          rate: 30     # Slow speed — lazy, hypnotic pulse
+          depth: 100   # Deep modulation for dramatic warble
+          form: 60     # Sine-like waveform
+          ramp: 0      # No ramping
+          clock_division: 3  # quarter — base tempo reference
+      - id: trem-pulse
+        name: Trem Pulse
+        preset_number: 2
+        notes: Rhythmic tremolo for arpeggiated passages
+        parameters:
+          feed: 65     # Higher feedback for sharper edge
+          volume: 55   # Unity
+          mix: 80      # Heavy blend for pronounced tremolo
+          rate: 72     # Medium-fast for rhythmic pulse
+          depth: 85    # Deep chop
+          form: 90     # Square-ish waveform for hard trem cuts
+          ramp: 0      # No ramping
+          clock_division: 4  # eighth — faster rhythmic subdivision
+
   - id: hx-stomp
     manufacturer: Line 6
     model: HX Stomp
