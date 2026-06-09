@@ -21,9 +21,9 @@
 
 ### Real Scenes
 
-- [ ] **SCENE-01**: All scenes have accurate descriptions reflecting actual live use context
-- [ ] **SCENE-02**: Scenes incorporate Wombtone and Brothers where musically appropriate
-- [ ] **SCENE-03**: MC6 bank/switch assignments reflect intended performance workflow
+- [x] **SCENE-01**: All scenes have accurate descriptions reflecting actual live use context
+- [x] **SCENE-02**: Scenes incorporate Wombtone and Brothers where musically appropriate
+- [x] **SCENE-03**: MC6 bank/switch assignments reflect intended performance workflow
 
 ## Future Requirements
 
@@ -53,9 +53,9 @@
 | PRESET-02 | Phase 3 | Complete |
 | PRESET-03 | Phase 3 | Complete |
 | PRESET-04 | Phase 3 | Complete |
-| SCENE-01 | Phase 4 | Pending |
-| SCENE-02 | Phase 4 | Pending |
-| SCENE-03 | Phase 4 | Pending |
+| SCENE-01 | Phase 4 | Complete |
+| SCENE-02 | Phase 4 | Complete |
+| SCENE-03 | Phase 4 | Complete |
 
 **Coverage:**
 
