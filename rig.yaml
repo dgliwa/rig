@@ -304,10 +304,12 @@ devices:
         name: Boogie PB
         preset_number: 38
         hlx_file: hlx/Boogie PB.hlx
+        notes: Mesa/Boogie-style high gain lead, D path
       - id: doogie-pb
         name: Doogie PB
         preset_number: 39
         hlx_file: hlx/Doogie PB.hlx
+        notes: Saturated lead tone with British character, D path
 
   - id: mood
     manufacturer: Chase Bliss Audio
