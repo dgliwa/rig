@@ -3,8 +3,8 @@ gsd_state_version: 1.0
 milestone: v1.2
 milestone_name: Flesh Out the Rig
 status: executing
-stopped_at: Phase 2 complete (commit f453ff2)
-last_updated: "2026-06-09T12:14:12.351Z"
+stopped_at: Phase 4 context gathered
+last_updated: "2026-06-09T12:28:58.081Z"
 last_activity: 2026-06-09
 progress:
   total_phases: 3
@@ -58,9 +58,9 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-06-08
-Stopped at: Phase 2 complete (commit f453ff2)
-Resume file: .planning/phases/02-schema-migration/02-01-SUMMARY.md
+Last session: 2026-06-09T12:28:58.077Z
+Stopped at: Phase 4 context gathered
+Resume file: .planning/phases/04-real-scenes/04-CONTEXT.md
 
 ## Current Position
 
