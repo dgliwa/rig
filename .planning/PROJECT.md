@@ -13,9 +13,9 @@ A single `rig validate` should confirm the config repo is consistent and ready t
 **Goal:** Migrate to rig-cli v1.2 single-file schema and build out real, playable scenes with tuned CBA presets.
 
 **Target features:**
-- Schema migration — collapse `devices/*.yaml`, `scenes/*.yaml`, and `signal-chain.yaml` into a single `rig.yaml`
-- CBA preset tuning — give the Mood MkII presets real, named configurations with meaningful parameter values
-- Real scenes — replace placeholder scenes with actual musical combinations for live use
+- Schema migration — collapse `devices/*.yaml`, `scenes/*.yaml`, and `signal-chain.yaml` into a single `rig.yaml` (Phase 2 ✓)
+- CBA preset tuning — real presets for Mood MkII, Wombtone MkII, and Brothers AM (Phase 3 ✓)
+- Real scenes — replace placeholder scenes with actual musical combinations for live use (Phase 4)
 
 ## Requirements
 
@@ -24,6 +24,8 @@ A single `rig validate` should confirm the config repo is consistent and ready t
 - ✓ `pedals/` directory renamed to `devices/` so rig-cli uses preferred path — v1.1
 - ✓ `signal-chain.yaml` uses `device:` field for all chain entries — v1.1
 - ✓ In-progress changes committed cleanly (mc6, Mood presets, scenes) — v1.1
+- ✓ Billy Strings Wombtone and Brothers AM devices added with real presets — v1.2 Phase 3
+- ✓ Mood MkII controls synced to catalog, all presets annotated with sonic intent — v1.2 Phase 3
 
 ### Active
 
@@ -31,7 +33,6 @@ A single `rig validate` should confirm the config repo is consistent and ready t
 - [ ] **SCHEMA-02**: All devices with presets defined inline in `rig.yaml` (v1.2 single-file format)
 - [ ] **SCHEMA-03**: Scenes defined under MC6 device `config.scenes` in `rig.yaml`
 - [ ] **SCHEMA-04**: `signal-chain.yaml` and `devices/*.yaml` and `scenes/*.yaml` removed (superseded)
-- [ ] **PRESET-01**: Mood MkII presets have real, musically meaningful parameter values and names
 - [ ] **SCENE-01**: All scenes map to real preset combinations that work together musically
 - [ ] **SCENE-02**: Scene descriptions reflect actual live use context
 
@@ -48,7 +49,7 @@ A single `rig validate` should confirm the config repo is consistent and ready t
 
 - rig-cli is at v1.2+ (single-file schema); `devices/` directory-based loading is no longer active
 - Config repo has 9 YAML files across devices/ and scenes/ directories + signal-chain.yaml
-- 3 devices: hx-stomp (HX Stomp), mood (Mood MkII), mc6 (MC6 controller)
+- 5 devices: brothers (Brothers AM), billy-strings-wombtone (Wombtone MkII), hx-stomp (HX Stomp), mood (Mood MkII), mc6 (MC6 controller)
 - 4 scenes: clean, crunch, lead, wacky
 - `rig validate` exits 0 but loads 0 devices/0 scenes — schema migration required for v1.2
 - v1.2 schema: devices are an ordered list in rig.yaml (order = signal chain); scenes live inside MC6 `config.scenes`
@@ -84,4 +85,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-06-08 — v1.2 milestone started*
+*Last updated: 2026-06-09 — Phase 3 complete, 5 devices*
