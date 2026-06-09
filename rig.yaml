@@ -98,6 +98,71 @@ devices:
             - env
             - tape
             - stretch
+        - name: stereo_width
+          type: knob
+          midi_cc: 24
+          min: 0
+          max: 127
+        - name: ramping_waveform
+          type: knob
+          midi_cc: 25
+          min: 0
+          max: 127
+        - name: fade
+          type: knob
+          midi_cc: 26
+          min: 0
+          max: 127
+        - name: tone
+          type: knob
+          midi_cc: 27
+          min: 0
+          max: 127
+        - name: level_balance
+          type: knob
+          midi_cc: 28
+          min: 0
+          max: 127
+        - name: direct_micro_loop
+          type: knob
+          midi_cc: 29
+          min: 0
+          max: 127
+        - name: sync
+          type: toggle
+          midi_cc: 31
+          min: 0
+          max: 2
+          positions:
+            - no_sync
+            - wet_only
+            - loop_only
+        - name: spread
+          type: toggle
+          midi_cc: 32
+          min: 0
+          max: 1
+          positions:
+            - half
+            - full
+        - name: buffer_length
+          type: toggle
+          midi_cc: 33
+          min: 0
+          max: 1
+          positions:
+            - half
+            - full
+        - name: midi_clock_ignore
+          type: switch
+          midi_cc: 51
+          min: 0
+          max: 127
+        - name: stop_ramping
+          type: switch
+          midi_cc: 52
+          min: 0
+          max: 127
         - name: wet_clock
           type: toggle
           midi_cc: 53
@@ -129,31 +194,6 @@ devices:
         - name: true_bypass
           type: switch
           midi_cc: 55
-          min: 0
-          max: 127
-        - name: micro_bypass
-          type: switch
-          midi_cc: 102
-          min: 0
-          max: 127
-        - name: wet_bypass
-          type: switch
-          midi_cc: 103
-          min: 0
-          max: 127
-        - name: freeze
-          type: switch
-          midi_cc: 105
-          min: 0
-          max: 127
-        - name: loop_overdub
-          type: switch
-          midi_cc: 106
-          min: 0
-          max: 127
-        - name: tap_tempo
-          type: switch
-          midi_cc: 107
           min: 0
           max: 127
         - name: dip_l_time
@@ -236,80 +276,109 @@ devices:
           midi_cc: 78
           min: 0
           max: 127
+        - name: wet_bypass
+          type: switch
+          midi_cc: 102
+          min: 0
+          max: 127
+        - name: loop_bypass
+          type: switch
+          midi_cc: 103
+          min: 0
+          max: 127
+        - name: freeze
+          type: switch
+          midi_cc: 105
+          min: 0
+          max: 127
+        - name: loop_overdub
+          type: switch
+          midi_cc: 106
+          min: 0
+          max: 127
+        - name: tap_tempo
+          type: switch
+          midi_cc: 107
+          min: 0
+          max: 127
     presets:
       - id: sigur-ros-drone
         name: Sigur Ros Drone
         preset_number: 3
+        notes: Ethereal ambient drone with granular texture — inspired by Sigur Rós's atmospheric soundscapes
         parameters:
-          time: 70
-          mix: 35
-          length: 120
-          wet_modify: 95
-          clock: 42
-          loop_modify: 105
-          ramp_speed: 0
-          wet_channel: 0
-          routing: 1
-          loop: 2
-          wet_clock: 6
-          loop_clock_division: 5
-          dip_r_spread: 127
-          dip_r_trails: 127
-          dip_r_smooth: 127
+          time: 70    # Moderate time for ambient wash
+          mix: 35     # Preserve dry signal for clarity
+          length: 120 # Long buffer for sustained drones
+          wet_modify: 95  # Heavy modulation for evolving texture
+          clock: 42       # Moderate granular density for texture
+          loop_modify: 105 # Heavy loop manipulation for glitch
+          ramp_speed: 0    # No ramping — static texture
+          wet_channel: 0   # reverb — ambient space
+          routing: 1       # wet_and_in — blend dry with effected
+          loop: 2          # stretch — sustained drone loops
+          wet_clock: 6     # half — slow modulation clock
+          loop_clock_division: 5 # quarter — moderate loop division
+          dip_r_spread: 127 # Full stereo spread for immersive width
+          dip_r_trails: 127 # Allow tails on bypass
+          dip_r_smooth: 127 # Smooth transitions between states
       - id: ambient-pad-machine
         name: Ambient Pad Machine
         preset_number: 4
+        notes: Shimmering ambient pad with max granular density — dense texture generator for backgrounds
         parameters:
-          time: 95
-          mix: 58
-          length: 95
-          wet_modify: 76
-          clock: 127
-          loop_modify: 64
-          ramp_speed: 0
-          wet_channel: 0
-          routing: 1
-          loop: 1
-          wet_clock: 6
-          loop_clock_division: 7
-          dip_r_trails: 127
+          time: 95      # Long time for sustained pads
+          mix: 58       # Balanced wet/dry blend
+          length: 95    # Long buffer for layered loops
+          wet_modify: 76 # Moderate modulation for shimmer
+          clock: 127    # Max granular density for shimmer
+          loop_modify: 64 # Moderate loop manipulation
+          ramp_speed: 0  # No ramping — steady pad
+          wet_channel: 0 # reverb — ambient space
+          routing: 1     # wet_and_in — blend dry with effected
+          loop: 1        # tape — warm, saturated loop texture
+          wet_clock: 6   # half — slow modulation clock
+          loop_clock_division: 7 # whole — slowest loop division
+          dip_r_trails: 127 # Allow trails for pad decay
       - id: broken-tape-memories
         name: Broken Tape Memories
         preset_number: 5
+        notes: Degraded tape texture with warble and bounce — lo-fi, unstable character for melancholic passages
         parameters:
-          time: 55
-          mix: 30
-          length: 78
-          wet_modify: 110
-          clock: 48
-          loop_modify: 115
-          ramp_speed: 12
-          wet_channel: 1
-          routing: 1
-          loop: 1
-          wet_clock: 3
-          loop_clock_division: 3
-          dip_l_bounce: 127
-          dip_l_sweep: 0
-          dip_r_trails: 127
+          time: 55      # Medium-short time for defined repeats
+          mix: 30       # Preserve dry clarity with texture underneath
+          length: 78    # Medium buffer length
+          wet_modify: 110 # Heavy modulation for warble
+          clock: 48        # Moderate granular density
+          loop_modify: 115 # Aggressive loop manipulation for degradation
+          ramp_speed: 12   # Slow ramp for subtle evolution
+          wet_channel: 1   # delay — rhythmic repeats
+          routing: 1       # wet_and_in
+          loop: 1          # tape — degraded tape texture
+          wet_clock: 3     # eighth_triplet — triplet rhythm for warble
+          loop_clock_division: 3 # eighth_triplet — triplet loop division
+          dip_l_bounce: 127 # Enable bounce mode for ping-pong
+          dip_l_sweep: 0    # Center sweep position
+          dip_r_trails: 127 # Allow trails for decay
       - id: second-guitarist
         name: Second Guitarist
         preset_number: 6
+        notes: Subtle doubling effect that sits behind the dry signal — creates the illusion of a second guitarist
         parameters:
-          time: 52
-          mix: 22
-          length: 96
-          wet_modify: 68
-          clock: 54
-          loop_modify: 82
-          ramp_speed: 0
-          wet_channel: 1
-          routing: 1
-          loop: 1
-          wet_clock: 3
-          loop_clock_division: 5
-          dip_r_trails: 127
-          dip_r_smooth: 127
+          time: 52     # Short to medium decay for tight doubling
+          mix: 22       # Low mix — subtle thickening, not obvious effect
+          length: 96    # Long buffer for layered captures
+          wet_modify: 68 # Moderate modulation for movement
+          clock: 54     # Medium granular density
+          loop_modify: 82 # Moderate loop manipulation
+          ramp_speed: 0   # No ramping — consistent texture
+          wet_channel: 1  # delay mode for rhythmic doubling
+          routing: 1      # wet_and_in
+          loop: 1         # tape mode for warmth
+          wet_clock: 3    # eighth_triplet
+          loop_clock_division: 5 # quarter — moderate division
+          dip_r_trails: 127 # Allow trails for natural decay
+          dip_r_smooth: 127 # Smooth transitions
 
   - id: mc6
     manufacturer: Morningstar
