@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.2
 milestone_name: Flesh Out the Rig
-status: complete
-stopped_at: Phase 4 verified — all 3 phases complete
-last_updated: "2026-06-09T13:00:00.000Z"
-last_activity: 2026-06-09
+status: Awaiting next milestone
+stopped_at: Phase 4 context gathered
+last_updated: "2026-06-10T13:05:16.161Z"
+last_activity: 2026-06-10 — Milestone v1.2 completed and archived
 progress:
   total_phases: 3
   completed_phases: 3
-  total_plans: 4
-  completed_plans: 4
+  total_plans: 3
+  completed_plans: 3
   percent: 100
 ---
 
@@ -64,14 +64,17 @@ Resume file: .planning/phases/04-real-scenes/04-CONTEXT.md
 
 ## Current Position
 
-Phase: 4
-Plan: Not started
-Status: Executing Phase 03
-Progress: [x] Phase 2 / [⏳] Phase 3 / [ ] Phase 4
-Last activity: 2026-06-09
+Phase: Milestone v1.2 complete
+Plan: —
+Status: Awaiting next milestone
+Last activity: 2026-06-10 — Milestone v1.2 completed and archived
 
 ## Performance Metrics
 
 | Phase | Plan | Duration | Notes |
 |-------|------|----------|-------|
 | Phase 04-real-scenes P04-01 | 20min | 1 tasks | 1 files |
+
+## Operator Next Steps
+
+- Start the next milestone with /gsd-new-milestone

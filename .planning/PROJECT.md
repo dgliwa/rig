@@ -2,39 +2,52 @@
 
 ## What This Is
 
-Infrastructure-as-Code configuration for a personal guitar rig (HX Stomp + Mood MkII + MC6 controller). YAML files declare devices, presets, and scenes; rig-cli validates, plans, and applies those configs to physical MIDI devices. One person, one rig, fully git-tracked.
+Infrastructure-as-Code configuration for a personal guitar rig (HX Stomp + Mood MkII + MC6 controller, plus Wombtone MkII and Brothers AM). YAML files declare devices, presets, and scenes; rig-cli validates, plans, and applies those configs to physical MIDI devices. One person, one rig, fully git-tracked.
 
 ## Core Value
 
 A single `rig validate` should confirm the config repo is consistent and ready to apply — no guessing, no manual cross-referencing.
 
-## Current Milestone: v1.2 Flesh Out the Rig
+## Current State
 
-**Goal:** Migrate to rig-cli v1.2 single-file schema and build out real, playable scenes with tuned CBA presets.
+**Shipped: v1.2 — Flesh Out the Rig (2026-06-09)**
 
-**Target features:**
-- Schema migration — collapse `devices/*.yaml`, `scenes/*.yaml`, and `signal-chain.yaml` into a single `rig.yaml` (Phase 2 ✓)
-- CBA preset tuning — real presets for Mood MkII, Wombtone MkII, and Brothers AM (Phase 3 ✓)
-- Real scenes — replace placeholder scenes with actual musical combinations for live use (Phase 4)
+The rig config is now a single `rig.yaml` (756 lines) with 5 devices, 15 presets, and 4 real scenes. `rig validate` reports "5 pedals, 4 scenes — All cross-references valid."
+
+**Deferred:** Phase 2 documentation debt (missing VERIFICATION.md, REQUIREMENTS.md traceability not updated). Nyquist validation never run. These were accepted at close.
+
+## Next Milestone Goals
+
+**v1.3+ MC6 Generation & Polish** — Planned
+
+Potential directions (determined via `/gsd-new-milestone`):
+- MC6 JSON generation (`rig generate mc6`)
+- More preset variations
+- Schema refinements
 
 ## Requirements
 
 ### Validated
 
-- ✓ `pedals/` directory renamed to `devices/` so rig-cli uses preferred path — v1.1
-- ✓ `signal-chain.yaml` uses `device:` field for all chain entries — v1.1
+- ✓ `pedals/` directory renamed to `devices/` — v1.1
+- ✓ `signal-chain.yaml` uses `device:` field — v1.1
 - ✓ In-progress changes committed cleanly (mc6, Mood presets, scenes) — v1.1
-- ✓ Billy Strings Wombtone and Brothers AM devices added with real presets — v1.2 Phase 3
-- ✓ Mood MkII controls synced to catalog, all presets annotated with sonic intent — v1.2 Phase 3
+- ✓ SCHEMA-01: `rig.yaml` has `devices:` list with all devices and presets inline — v1.2
+- ✓ SCHEMA-02: Scenes under MC6 `config.scenes` — v1.2
+- ✓ SCHEMA-03: Legacy files removed (`signal-chain.yaml`, `devices/`, `scenes/`) — v1.2
+- ✓ SCHEMA-04: `rig validate` reports actual device and scene counts — v1.2
+- ✓ PRESET-01: Billy Strings Wombtone device with real presets — v1.2
+- ✓ PRESET-02: Brothers AM device with real presets — v1.2
+- ✓ PRESET-03: Mood MkII presets reviewed and annotated — v1.2
+- ✓ PRESET-04: Non-obvious parameter values annotated — v1.2
+- ✓ SCENE-01: Accurate scene descriptions — v1.2
+- ✓ SCENE-02: Wombtone and Brothers in scenes — v1.2
+- ✓ SCENE-03: MC6 bank/switch performance workflow — v1.2
 
 ### Active
 
-- [ ] **SCHEMA-01**: `rig validate` validates actual device and scene content (currently 0 devices/0 scenes)
-- [ ] **SCHEMA-02**: All devices with presets defined inline in `rig.yaml` (v1.2 single-file format)
-- [ ] **SCHEMA-03**: Scenes defined under MC6 device `config.scenes` in `rig.yaml`
-- [ ] **SCHEMA-04**: `signal-chain.yaml` and `devices/*.yaml` and `scenes/*.yaml` removed (superseded)
-- [ ] **SCENE-01**: All scenes map to real preset combinations that work together musically
-- [ ] **SCENE-02**: Scene descriptions reflect actual live use context
+- [ ] **GEN-01**: `rig generate mc6` produces valid MC6 bank JSON from scene definitions
+- [ ] **GEN-02**: Generated MC6 JSON can be loaded onto hardware without manual editing
 
 ### Out of Scope
 
@@ -42,17 +55,20 @@ A single `rig validate` should confirm the config repo is consistent and ready t
 |---------|--------|
 | New pedal/device additions | No new gear being added |
 | rig-cli source changes | This is a rig config repo only |
-| MC6 JSON generation | Deferred — validate first, generate in v1.3+ |
-| HX Stomp preset content changes | HX presets stay as-is; schema migration only |
+| HX Stomp preset content changes | HX presets stay as-is; format not managed here |
 
 ## Context
 
-- rig-cli is at v1.2+ (single-file schema); `devices/` directory-based loading is no longer active
-- Config repo has 9 YAML files across devices/ and scenes/ directories + signal-chain.yaml
-- 5 devices: brothers (Brothers AM), billy-strings-wombtone (Wombtone MkII), hx-stomp (HX Stomp), mood (Mood MkII), mc6 (MC6 controller)
-- 4 scenes: clean, crunch, lead, wacky
-- `rig validate` exits 0 but loads 0 devices/0 scenes — schema migration required for v1.2
-- v1.2 schema: devices are an ordered list in rig.yaml (order = signal chain); scenes live inside MC6 `config.scenes`
+- **rig-cli**: v1.2+ (single-file schema); `devices/` directory-based loading deprecated
+- **rig.yaml**: 756 lines, 5 devices, 15 presets, 4 scenes
+- **Devices**: brothers (Brothers AM), billy-strings-wombtone (Wombtone MkII), hx-stomp (HX Stomp), mood (Mood MkII), mc6 (MC6 controller)
+- **Signal chain**: brothers → wombtone → hx-stomp → mood → mc6
+- **MIDI channels**: brothers=4, wombtone=3, hx-stomp=1, mood=2, mc6=1
+- **Scenes**: clean (Fender + vibe + doubling), crunch (British crunch + OD + pad), lead (Boogie + boost + broken tape), wacky (BOC lead + trem + drone)
+- **MC6 Bank 1**: A=clean, B=crunch, C=lead, D=wacky
+- **`rig validate`**: "5 pedals, 4 scenes — All cross-references valid"
+- **Controls per device**: brothers=28, wombtone=12, hx-stomp=0, mood=45, mc6=0
+- **Doc debt**: Phase 2 missing VERIFICATION.md; no Nyquist validation run on any phase
 
 ## Constraints
 
@@ -63,26 +79,14 @@ A single `rig validate` should confirm the config repo is consistent and ready t
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Version rig repo at v1.1 to match rig-cli counterpart | Keeps version numbers in sync across repos | ✓ Good — repo is now v1.1 |
-| Rename `pedals/` → `devices/` rather than waiting | rig-cli TODOs signal `pedals/` will eventually break | ✓ Good — done, canonical naming in place |
-| Defer single-file migration to v1.2 | v1.1 scope was naming migration only; schema format change is a bigger lift | — Pending v1.2 |
-
-## Evolution
-
-This document evolves at phase transitions and milestone boundaries.
-
-**After each phase transition** (via `/gsd-transition`):
-1. Requirements invalidated? → Move to Out of Scope with reason
-2. Requirements validated? → Move to Validated with phase reference
-3. New requirements emerged? → Add to Active
-4. Decisions to log? → Add to Key Decisions
-5. "What This Is" still accurate? → Update if drifted
-
-**After each milestone** (via `/gsd-complete-milestone`):
-1. Full review of all sections
-2. Core Value check — still the right priority?
-3. Audit Out of Scope — reasons still valid?
-4. Update Context with current state
+| Version rig repo at v1.1 to match rig-cli counterpart | Keeps version numbers in sync | ✓ Good |
+| Rename `pedals/` → `devices/` | rig-cli TODOs signal `pedals/` will break | ✓ Good |
+| Defer single-file migration to v1.2 | v1.1 scope was naming only | ✓ Accomplished in Phase 2 |
+| MIDI channels: mood=2, wombtone=3, brothers=4 | CBA defaults; avoids conflicts | ✓ Good |
+| Signal chain: brothers → wombtone → hx-stomp → mood → mc6 | Gain staging: drive → modulation → amp → wet → controller | ✓ Good |
+| MC6 Bank 1: A=clean, B=crunch, C=lead, D=wacky | Performance order: most-used first | ✓ Good |
+| Mood presets from official doc recipes | Avoids low-quality fuzz; uses vetted sounds | ✓ Good |
+| Accept Phase 2 doc debt at close | Verification and traceability are documentation-only gaps | ⚠ Revisit |
 
 ---
-*Last updated: 2026-06-09 — Phase 3 complete, 5 devices*
+*Last updated: 2026-06-09 — v1.2 milestone shipped*
