@@ -8,176 +8,75 @@ devices:
     config:
       type: chase_bliss
       midi_channel: 4
-      controls:
-        - name: gain_2
-          type: knob
-          midi_cc: 14
-          min: 0
-          max: 127
-        - name: volume_2
-          type: knob
-          midi_cc: 15
-          min: 0
-          max: 127
-        - name: gain_1
-          type: knob
-          midi_cc: 16
-          min: 0
-          max: 127
-        - name: tone_2
-          type: knob
-          midi_cc: 17
-          min: 0
-          max: 127
-        - name: volume_1
-          type: knob
-          midi_cc: 18
-          min: 0
-          max: 127
-        - name: tone_1
-          type: knob
-          midi_cc: 19
-          min: 0
-          max: 127
-        - name: presence_2
-          type: knob
-          midi_cc: 27
-          min: 0
-          max: 127
-        - name: presence_1
-          type: knob
-          midi_cc: 29
-          min: 0
-          max: 127
-        - name: gain_2_type
-          type: toggle
-          midi_cc: 21
-          min: 0
-          max: 3
-          positions:
-            - boost
-            - od
-            - dist
-        - name: treble_boost
-          type: toggle
-          midi_cc: 22
-          min: 0
-          max: 3
-          positions:
-            - full_sun
-            - off
-            - half_sun
-        - name: gain_1_type
-          type: toggle
-          midi_cc: 23
-          min: 0
-          max: 3
-          positions:
-            - dist
-            - od
-            - boost
-        - name: dip_volume_1
-          type: dipswitch
-          midi_cc: 61
-          min: 0
-          max: 1
-        - name: dip_volume_2
-          type: dipswitch
-          midi_cc: 62
-          min: 0
-          max: 1
-        - name: dip_gain_1
-          type: dipswitch
-          midi_cc: 63
-          min: 0
-          max: 1
-        - name: dip_gain_2
-          type: dipswitch
-          midi_cc: 64
-          min: 0
-          max: 1
-        - name: dip_tone_1
-          type: dipswitch
-          midi_cc: 65
-          min: 0
-          max: 1
-        - name: dip_tone_2
-          type: dipswitch
-          midi_cc: 66
-          min: 0
-          max: 1
-        - name: dip_sweep
-          type: dipswitch
-          midi_cc: 67
-          min: 0
-          max: 1
-        - name: dip_polarity
-          type: dipswitch
-          midi_cc: 68
-          min: 0
-          max: 1
-        - name: dip_hi_gain_1
-          type: dipswitch
-          midi_cc: 71
-          min: 0
-          max: 1
-        - name: dip_hi_gain_2
-          type: dipswitch
-          midi_cc: 72
-          min: 0
-          max: 1
-        - name: dip_motobyp_1
-          type: dipswitch
-          midi_cc: 73
-          min: 0
-          max: 1
-        - name: dip_motobyp_2
-          type: dipswitch
-          midi_cc: 74
-          min: 0
-          max: 1
-        - name: dip_pres_link_1
-          type: dipswitch
-          midi_cc: 75
-          min: 0
-          max: 1
-        - name: dip_pres_link_2
-          type: dipswitch
-          midi_cc: 76
-          min: 0
-          max: 1
-        - name: dip_master
-          type: dipswitch
-          midi_cc: 77
-          min: 0
-          max: 1
-        - name: channel_1_bypass
-          type: switch
-          midi_cc: 102
-          min: 0
-          max: 127
-        - name: channel_2_bypass
-          type: switch
-          midi_cc: 103
-          min: 0
-          max: 127
+      model: Brothers AM
     presets:
       - id: am-crunch
         name: AM Crunch
-        preset_number: 1
+        preset_number: 3
         notes: Arctic Monkeys-style edge-of-breakup crunch (Alex Turner vibe)
         parameters:
-          gain_2: 65     # Moderate OD gain — pushed but not fuzzy
-          volume_2: 70   # Slight boost over unity
-          gain_1: 30     # Light boost gain
-          volume_1: 55   # Unity-ish
-          tone_2: 60     # Slightly bright
-          tone_1: 50     # Neutral
-          presence_2: 55
-          presence_1: 50
+          gain_2: 83     # Moderate OD gain — pushed but not fuzzy
+          volume_2: 89   # Slight boost over unity
+          gain_1: 38     # Light boost gain
+          volume_1: 70   # Unity-ish
+          tone_2: 76     # Slightly bright
+          tone_1: 64     # Neutral
+          presence_2: 70
+          presence_1: 64
           gain_2_type: 1   # od — smooth overdrive
           treble_boost: 2  # half_sun — subtle treble lift
           gain_1_type: 2   # boost — clean boost side
+
+      - id: transparent-lift
+        name: Transparent Lift
+        preset_number: 4
+        notes: "Single-channel clean boost — doc recipe ①. Ch1 BOOST at low gain lifts volume and feel without adding grit. Ch2 bypassed. Treble toggle OFF for the pure KOT voice (no Rangemaster)."
+        parameters:
+          gain_1: 13     # ~8 o'clock — minimal gain, pure volume lift
+          volume_1: 83   # ~1–2 o'clock — noticeable boost above unity
+          tone_1: 64     # noon — neutral
+          presence_1: 0  # down — default; stacking treble boost adds ice-pick top end
+          gain_1_type: 2  # boost — cleanest, loudest mode
+          treble_boost: 1  # off — pure KOT voice
+          channel_2_bypass: 0  # Ch2 bypassed — single-channel preset
+
+      - id: kot-lead-stack
+        name: KOT Lead Stack
+        preset_number: 5
+        notes: "Two-stage lead boost — doc recipe ⑤. Ch2=OD is your always-on rhythm tone; stomp Ch1 (BOOST) to push Ch2 harder for solos. MASTER dip prevents volume spike when engaging Ch1."
+        parameters:
+          gain_2: 51     # ~11 o'clock — edge-of-breakup OD base
+          volume_2: 76   # ~1 o'clock — slightly above unity (governs output with MASTER on)
+          tone_2: 64     # noon — neutral
+          presence_2: 0  # down — default
+          gain_2_type: 1  # od — classic King of Tone voice
+          gain_1: 38     # ~10 o'clock — moderate boost push into Ch2
+          volume_1: 83   # ~1–2 o'clock — pushes Ch2 harder; not a volume control with MASTER on
+          tone_1: 64     # noon — neutral
+          presence_1: 0  # down — default
+          gain_1_type: 2  # boost — transparent overloader feeding Ch2
+          treble_boost: 1  # off — balanced KOT voice; swap to 2 (half_sun) for brighter solos
+          dip_master: 1   # MASTER on — VOL2 governs output at all times; Ch1 can't spike levels
+
+      - id: bad-bros
+        name: Bad Bros
+        preset_number: 6
+        notes: "Max gnarly stack — doc recipe ⑨ (factory 'Bad Bros'). Rangemaster into BOOST into DIST, both HI GAINs on. TONE2 dialed back slightly to offset the treble-heavy stack."
+        parameters:
+          gain_2: 89     # ~2 o'clock — high-gain distortion
+          volume_2: 76   # ~1 o'clock — final output (MASTER on)
+          tone_2: 57     # ~11 o'clock — slightly dark to offset treble booster stack
+          presence_2: 0  # down — don't pile top end into an already-bright signal
+          gain_2_type: 2  # dist — hard clipping for max saturation
+          gain_1: 96     # ~2–3 o'clock — driving treble booster and Ch2 hard
+          volume_1: 70   # near unity — MASTER means this doesn't affect output level
+          tone_1: 64     # noon
+          presence_1: 0  # down
+          gain_1_type: 2  # boost — Ch1 as overloader feeding Ch2
+          treble_boost: 2  # half_sun — classic Rangemaster voice up front for snarl
+          dip_hi_gain_1: 1  # HI GAIN 1 on — +25% gain on Ch1, LED red
+          dip_hi_gain_2: 1  # HI GAIN 2 on — +25% gain on Ch2, LED red
+          dip_master: 1     # MASTER on — VOL2 controls final output; needed with stacked boosts
 
   - id: billy-strings-wombtone
     manufacturer: Chase Bliss Audio
@@ -186,99 +85,32 @@ devices:
     config:
       type: chase_bliss
       midi_channel: 3
-      controls:
-        - name: feed
-          type: knob
-          midi_cc: 14
-          min: 0
-          max: 127
-        - name: volume
-          type: knob
-          midi_cc: 15
-          min: 0
-          max: 127
-        - name: mix
-          type: knob
-          midi_cc: 16
-          min: 0
-          max: 127
-        - name: rate
-          type: knob
-          midi_cc: 17
-          min: 0
-          max: 127
-        - name: depth
-          type: knob
-          midi_cc: 18
-          min: 0
-          max: 127
-        - name: form
-          type: knob
-          midi_cc: 19
-          min: 0
-          max: 127
-        - name: ramp
-          type: knob
-          midi_cc: 20
-          min: 0
-          max: 127
-        - name: clock_division
-          type: toggle
-          midi_cc: 21
-          min: 0
-          max: 5
-          positions:
-            - whole
-            - half
-            - quarter_triplet
-            - quarter
-            - eighth
-            - sixteenth
-        - name: midi_clock_ignore
-          type: switch
-          midi_cc: 51
-          min: 0
-          max: 127
-        - name: tap_tempo
-          type: switch
-          midi_cc: 93
-          min: 0
-          max: 127
-        - name: expression_over_midi
-          type: switch
-          midi_cc: 100
-          min: 0
-          max: 127
-        - name: bypass
-          type: switch
-          midi_cc: 102
-          min: 0
-          max: 127
+      model: Wombtone MkII
     presets:
       - id: slow-vibe
         name: Slow Vibe
-        preset_number: 1
+        preset_number: 3
         notes: Deep, slow vibrato for ambient swells and pads
         parameters:
-          feed: 50     # Moderate feedback for smooth warbling
-          volume: 60   # Slight boost
-          mix: 70      # Heavy wet blend for pronounced effect
-          rate: 30     # Slow speed — lazy, hypnotic pulse
-          depth: 100   # Deep modulation for dramatic warble
-          form: 60     # Sine-like waveform
+          feed: 90     # Moderate feedback for smooth warbling
+          volume: 76   # Slight boost
+          mix: 89      # Heavy wet blend for pronounced effect
+          rate: 64     # Slow speed — lazy, hypnotic pulse
+          depth: 95   # Deep modulation for dramatic warble
+          form: 64     # Sine-like waveform
           ramp: 0      # No ramping
-          clock_division: 3  # quarter — base tempo reference
+          clock_division: 2  # quarter — base tempo reference
       - id: trem-pulse
         name: Trem Pulse
-        preset_number: 2
+        preset_number: 4
         notes: Rhythmic tremolo for arpeggiated passages
         parameters:
-          feed: 65     # Higher feedback for sharper edge
-          volume: 55   # Unity
-          mix: 80      # Heavy blend for pronounced tremolo
-          rate: 72     # Medium-fast for rhythmic pulse
-          depth: 85    # Deep chop
-          form: 90     # Square-ish waveform for hard trem cuts
+          feed: 83     # Higher feedback for sharper edge
+          volume: 70   # Unity
+          mix: 102     # Heavy blend for pronounced tremolo
+          rate: 91     # Medium-fast for rhythmic pulse
+          depth: 108   # Deep chop
+          form: 114    # Square-ish waveform for hard trem cuts
           ramp: 0      # No ramping
           clock_division: 4  # eighth — faster rhythmic subdivision
 
@@ -318,272 +150,7 @@ devices:
     config:
       type: chase_bliss
       midi_channel: 2
-      controls:
-        - name: time
-          type: knob
-          midi_cc: 14
-          min: 0
-          max: 127
-        - name: mix
-          type: knob
-          midi_cc: 15
-          min: 0
-          max: 127
-        - name: length
-          type: knob
-          midi_cc: 16
-          min: 0
-          max: 127
-        - name: wet_modify
-          type: knob
-          midi_cc: 17
-          min: 0
-          max: 127
-        - name: clock
-          type: knob
-          midi_cc: 18
-          min: 0
-          max: 127
-        - name: loop_modify
-          type: knob
-          midi_cc: 19
-          min: 0
-          max: 127
-        - name: ramp_speed
-          type: knob
-          midi_cc: 20
-          min: 0
-          max: 127
-        - name: wet_channel
-          type: toggle
-          midi_cc: 21
-          min: 0
-          max: 127
-          positions:
-            - reverb
-            - delay
-            - slip
-        - name: routing
-          type: toggle
-          midi_cc: 22
-          min: 0
-          max: 127
-          positions:
-            - in
-            - wet_and_in
-            - wet
-        - name: loop
-          type: toggle
-          midi_cc: 23
-          min: 0
-          max: 127
-          positions:
-            - env
-            - tape
-            - stretch
-        - name: stereo_width
-          type: knob
-          midi_cc: 24
-          min: 0
-          max: 127
-        - name: ramping_waveform
-          type: knob
-          midi_cc: 25
-          min: 0
-          max: 127
-        - name: fade
-          type: knob
-          midi_cc: 26
-          min: 0
-          max: 127
-        - name: tone
-          type: knob
-          midi_cc: 27
-          min: 0
-          max: 127
-        - name: level_balance
-          type: knob
-          midi_cc: 28
-          min: 0
-          max: 127
-        - name: direct_micro_loop
-          type: knob
-          midi_cc: 29
-          min: 0
-          max: 127
-        - name: sync
-          type: toggle
-          midi_cc: 31
-          min: 0
-          max: 2
-          positions:
-            - no_sync
-            - wet_only
-            - loop_only
-        - name: spread
-          type: toggle
-          midi_cc: 32
-          min: 0
-          max: 1
-          positions:
-            - half
-            - full
-        - name: buffer_length
-          type: toggle
-          midi_cc: 33
-          min: 0
-          max: 1
-          positions:
-            - half
-            - full
-        - name: midi_clock_ignore
-          type: switch
-          midi_cc: 51
-          min: 0
-          max: 127
-        - name: stop_ramping
-          type: switch
-          midi_cc: 52
-          min: 0
-          max: 127
-        - name: wet_clock
-          type: toggle
-          midi_cc: 53
-          min: 0
-          max: 7
-          positions:
-            - 32nd
-            - 16th
-            - eighth_triplet
-            - eighth
-            - dotted_eighth
-            - quarter
-            - half
-            - whole
-        - name: loop_clock_division
-          type: toggle
-          midi_cc: 54
-          min: 0
-          max: 7
-          positions:
-            - 32nd
-            - 16th
-            - eighth_triplet
-            - eighth
-            - dotted_eighth
-            - quarter
-            - half
-            - whole
-        - name: true_bypass
-          type: switch
-          midi_cc: 55
-          min: 0
-          max: 127
-        - name: dip_l_time
-          type: dipswitch
-          midi_cc: 61
-          min: 0
-          max: 127
-        - name: dip_l_wet_modify
-          type: dipswitch
-          midi_cc: 62
-          min: 0
-          max: 127
-        - name: dip_l_clock
-          type: dipswitch
-          midi_cc: 63
-          min: 0
-          max: 127
-        - name: dip_l_loop_modify
-          type: dipswitch
-          midi_cc: 64
-          min: 0
-          max: 127
-        - name: dip_l_length
-          type: dipswitch
-          midi_cc: 65
-          min: 0
-          max: 127
-        - name: dip_l_bounce
-          type: dipswitch
-          midi_cc: 66
-          min: 0
-          max: 127
-        - name: dip_l_sweep
-          type: dipswitch
-          midi_cc: 67
-          min: 0
-          max: 127
-        - name: dip_l_polarity
-          type: dipswitch
-          midi_cc: 68
-          min: 0
-          max: 127
-        - name: dip_r_classic
-          type: dipswitch
-          midi_cc: 71
-          min: 0
-          max: 127
-        - name: dip_r_miso
-          type: dipswitch
-          midi_cc: 72
-          min: 0
-          max: 127
-        - name: dip_r_spread
-          type: dipswitch
-          midi_cc: 73
-          min: 0
-          max: 127
-        - name: dip_r_dry_kill
-          type: dipswitch
-          midi_cc: 74
-          min: 0
-          max: 127
-        - name: dip_r_trails
-          type: dipswitch
-          midi_cc: 75
-          min: 0
-          max: 127
-        - name: dip_r_latch
-          type: dipswitch
-          midi_cc: 76
-          min: 0
-          max: 127
-        - name: dip_r_no_dub
-          type: dipswitch
-          midi_cc: 77
-          min: 0
-          max: 127
-        - name: dip_r_smooth
-          type: dipswitch
-          midi_cc: 78
-          min: 0
-          max: 127
-        - name: wet_bypass
-          type: switch
-          midi_cc: 102
-          min: 0
-          max: 127
-        - name: loop_bypass
-          type: switch
-          midi_cc: 103
-          min: 0
-          max: 127
-        - name: freeze
-          type: switch
-          midi_cc: 105
-          min: 0
-          max: 127
-        - name: loop_overdub
-          type: switch
-          midi_cc: 106
-          min: 0
-          max: 127
-        - name: tap_tempo
-          type: switch
-          midi_cc: 107
-          min: 0
-          max: 127
+      model: Mood MkII
     presets:
       - id: liquid-ambient-wash
         name: Liquid Ambient Wash
@@ -668,24 +235,27 @@ devices:
           presets:
             hx-stomp: princeton
             billy-strings-wombtone: slow-vibe
-            brothers: am-crunch
+            brothers: transparent-lift
             mood: liquid-ambient-wash
         crunch:
           description: "British crunch with Brothers OD and ambient pad"
           presets:
             hx-stomp: marshall
             brothers: am-crunch
+            billy-strings-wombtone: slow-vibe
             mood: dub-tape-delay
         lead:
           description: "High gain Boogie lead with Brothers boost and broken tape"
           presets:
             hx-stomp: boogie-pb
-            brothers: am-crunch
+            brothers: kot-lead-stack
+            billy-strings-wombtone: slow-vibe
             mood: granular-bloop-cloud
         wacky:
           description: "BOC saturated lead with tremolo and Sigur Rós drone"
           presets:
             hx-stomp: doogie-pb
+            brothers: bad-bros
             billy-strings-wombtone: trem-pulse
             mood: reverse-stretch-drift
       banks:
