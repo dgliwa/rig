@@ -33,7 +33,7 @@ See: `.planning/milestones/v1.2-ROADMAP.md`
 **Milestone Goal:** Wire all four devices with Weezer-style 90s rock presets and a new HX Stomp Mesa Boogie scene accessible via MC6 Bank 1 Switch B.
 
 - [x] **Phase 5: CBA Device Presets** - Add rock-drive, chorus-shimmer, and envelope-filter presets for Brothers, Mood, and Wombtone (completed 2026-06-18)
-- [ ] **Phase 6: HX Stomp Mesa-Rock Entry** - Add mesa-rock preset entry in rig.yaml pointing to user-supplied .hlx patch
+- [x] **Phase 6: HX Stomp Mesa-Rock Entry** - Add mesa-rock preset entry in rig.yaml pointing to user-supplied .hlx patch (completed 2026-06-18)
 - [ ] **Phase 7: Rock Scene & MC6 Wiring** - Create rock scene wiring all devices and map it to MC6 Bank 1 Switch B
 
 ## Phase Details
@@ -86,5 +86,5 @@ See: `.planning/milestones/v1.2-ROADMAP.md`
 | 3. CBA Devices & Presets | v1.2 | 1/1 | Complete | 2026-06-09 |
 | 4. Real Scenes | v1.2 | 1/1 | Complete | 2026-06-09 |
 | 5. CBA Device Presets | v1.3 | 1/1 | Complete    | 2026-06-18 |
-| 6. HX Stomp Mesa-Rock Entry | v1.3 | 0/1 | Not started | - |
+| 6. HX Stomp Mesa-Rock Entry | v1.3 | 1/1 | Complete | 2026-06-18 |
 | 7. Rock Scene & MC6 Wiring | v1.3 | 0/1 | Not started | - |
