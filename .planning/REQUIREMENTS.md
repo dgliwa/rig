@@ -48,6 +48,7 @@
 | BROTHERS-01 | Phase 5 | Complete |
 | MOOD-01 | Phase 5 | Complete |
 | WOMBTONE-01 | Phase 5 | Complete |
+| WOMBTONE-02 | Deferred | Deferred |
 | HX-01 | Phase 6 | Pending |
 | SCENE-01 | Phase 7 | Pending |
 | SCENE-02 | Phase 7 | Pending |
@@ -55,9 +56,9 @@
 
 **Coverage:**
 
-- v1.3 requirements: 7 total
+- v1.3 requirements: 8 total
 - Mapped to phases: 7
-- Unmapped: 0
+- Deferred: 1 (WOMBTONE-02)
 
 ---
 *Requirements defined: 2026-06-18*
