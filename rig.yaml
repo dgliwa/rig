@@ -118,6 +118,21 @@ devices:
           form: 64     # Sine-like waveform
           ramp: 0      # No ramping
           clock_division: 2  # quarter — base tempo reference
+
+      - id: envelope-filter
+        name: Envelope Filter
+        preset_number: 6
+        notes: "Static cocked-wah phaser — rate frozen at 0, high resonance (feed: 100) parks the phase sweep in the vowel sweet spot. Texture device in rock chain, not a performance sweep. Deep depth for obvious coloring."
+        parameters:
+          feed: 100        # High resonance — pronounced vowel/wah peak character
+          volume: 70       # Unity
+          mix: 70          # Moderate blend — filter vowel present without swallowing dry signal
+          rate: 0          # Frozen — static cocked-wah position, no LFO sweep
+          depth: 115       # Near-max — clearly audible phaser freeze, obvious coloring
+          form: 64         # Sine-like waveform
+          ramp: 0          # No ramping
+          clock_division: 2  # quarter — base tempo reference
+
       # - id: lead-vibe
       #   name: Lead Vibe
       #   preset_number: 4
