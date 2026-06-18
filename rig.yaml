@@ -307,6 +307,13 @@ devices:
             billy-strings-wombtone: slow-vibe
             brothers: transparent-lift
             mood: ambient-reverse-tape
+        rock:
+          description: "90s rock: Mesa Boogie amp, Brothers distortion, Wombtone wah, Mood chorus"
+          presets:
+            hx-stomp: mesa-rock
+            billy-strings-wombtone: envelope-filter
+            brothers: rock-drive
+            mood: chorus-shimmer
         # boogie:
         #   description: "High gain Boogie lead with Brothers boost and broken tape"
         #   presets:
@@ -334,8 +341,8 @@ devices:
           switches:
             A:
               scene: clean
-            # B:
-            #   scene: crunch
+            B:
+              scene: rock
             # C:
             #   scene: lead
             # D:
