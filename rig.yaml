@@ -10,22 +10,22 @@ devices:
       midi_channel: 4
       model: Brothers AM
     presets:
-      - id: am-crunch
-        name: AM Crunch
-        preset_number: 3
-        notes: Arctic Monkeys-style edge-of-breakup crunch (Alex Turner vibe)
-        parameters:
-          gain_2: 83     # Moderate OD gain — pushed but not fuzzy
-          volume_2: 89   # Slight boost over unity
-          gain_1: 38     # Light boost gain
-          volume_1: 70   # Unity-ish
-          tone_2: 76     # Slightly bright
-          tone_1: 64     # Neutral
-          presence_2: 70
-          presence_1: 64
-          gain_2_type: 1   # od — smooth overdrive
-          treble_boost: 2  # half_sun — subtle treble lift
-          gain_1_type: 2   # boost — clean boost side
+      # - id: am-crunch
+      #   name: AM Crunch
+      #   preset_number: 3
+      #   notes: Arctic Monkeys-style edge-of-breakup crunch (Alex Turner vibe)
+      #   parameters:
+      #     gain_2: 83     # Moderate OD gain — pushed but not fuzzy
+      #     volume_2: 89   # Slight boost over unity
+      #     gain_1: 38     # Light boost gain
+      #     volume_1: 70   # Unity-ish
+      #     tone_2: 76     # Slightly bright
+      #     tone_1: 64     # Neutral
+      #     presence_2: 70
+      #     presence_1: 64
+      #     gain_2_type: 1   # od — smooth overdrive
+      #     treble_boost: 2  # half_sun — subtle treble lift
+      #     gain_1_type: 2   # boost — clean boost side
 
       - id: transparent-lift
         name: Transparent Lift
@@ -40,43 +40,61 @@ devices:
           treble_boost: 1  # off — pure KOT voice
           channel_2_bypass: 0  # Ch2 bypassed — single-channel preset
 
-      - id: kot-lead-stack
-        name: KOT Lead Stack
+      - id: rock-drive
+        name: Rock Drive
         preset_number: 5
-        notes: "Two-stage lead boost — doc recipe ⑤. Ch2=OD is your always-on rhythm tone; stomp Ch1 (BOOST) to push Ch2 harder for solos. MASTER dip prevents volume spike when engaging Ch1."
+        notes: "Dual-channel rock preset — Ch1 BOOST pushes louder than transparent-lift (Buddy Holly rhythm level); Ch2 DIST with HI GAIN 2 engaged for Say It Ain't So solo saturation. Both channels active simultaneously."
         parameters:
-          gain_2: 51     # ~11 o'clock — edge-of-breakup OD base
-          volume_2: 76   # ~1 o'clock — slightly above unity (governs output with MASTER on)
-          tone_2: 64     # noon — neutral
-          presence_2: 0  # down — default
-          gain_2_type: 1  # od — classic King of Tone voice
-          gain_1: 38     # ~10 o'clock — moderate boost push into Ch2
-          volume_1: 83   # ~1–2 o'clock — pushes Ch2 harder; not a volume control with MASTER on
-          tone_1: 64     # noon — neutral
-          presence_1: 0  # down — default
-          gain_1_type: 2  # boost — transparent overloader feeding Ch2
-          treble_boost: 1  # off — balanced KOT voice; swap to 2 (half_sun) for brighter solos
-          dip_master: 1   # MASTER on — VOL2 governs output at all times; Ch1 can't spike levels
+          gain_1: 42       # ~10 o'clock — moderate boost, noticeably driven vs transparent-lift (13)
+          volume_1: 90     # ~2 o'clock — louder than transparent-lift (83); rhythm level push
+          tone_1: 64       # noon — neutral
+          presence_1: 0    # down — default
+          gain_1_type: 2   # boost — cleanest, loudest Ch1 mode (0=boost, 1=od, 2=dist)
+          gain_2: 89       # ~2 o'clock — high-gain distortion, solo territory
+          volume_2: 76     # ~1 o'clock — output level with Ch2 distortion
+          tone_2: 64       # noon — neutral
+          presence_2: 0    # down — default
+          gain_2_type: 2   # dist — hard clipping for saturation
+          treble_boost: 1  # off — pure KOT voice, no Rangemaster coloring
+          dip_hi_gain_2: 127  # HI GAIN 2 on — +25% gain on Ch2 for lead-sustain saturation
 
-      - id: bad-bros
-        name: Bad Bros
-        preset_number: 6
-        notes: "Max gnarly stack — doc recipe ⑨ (factory 'Bad Bros'). Rangemaster into BOOST into DIST, both HI GAINs on. TONE2 dialed back slightly to offset the treble-heavy stack."
-        parameters:
-          gain_2: 89     # ~2 o'clock — high-gain distortion
-          volume_2: 76   # ~1 o'clock — final output (MASTER on)
-          tone_2: 57     # ~11 o'clock — slightly dark to offset treble booster stack
-          presence_2: 0  # down — don't pile top end into an already-bright signal
-          gain_2_type: 2  # dist — hard clipping for max saturation
-          gain_1: 96     # ~2–3 o'clock — driving treble booster and Ch2 hard
-          volume_1: 70   # near unity — MASTER means this doesn't affect output level
-          tone_1: 64     # noon
-          presence_1: 0  # down
-          gain_1_type: 2  # boost — Ch1 as overloader feeding Ch2
-          treble_boost: 2  # half_sun — classic Rangemaster voice up front for snarl
-          dip_hi_gain_1: 1  # HI GAIN 1 on — +25% gain on Ch1, LED red
-          dip_hi_gain_2: 1  # HI GAIN 2 on — +25% gain on Ch2, LED red
-          dip_master: 1     # MASTER on — VOL2 controls final output; needed with stacked boosts
+      # - id: kot-lead-stack
+      #   name: KOT Lead Stack
+      #   preset_number: 5
+      #   notes: "Two-stage lead boost — doc recipe ⑤. Ch2=OD is your always-on rhythm tone; stomp Ch1 (BOOST) to push Ch2 harder for solos. MASTER dip prevents volume spike when engaging Ch1."
+      #   parameters:
+      #     gain_2: 51     # ~11 o'clock — edge-of-breakup OD base
+      #     volume_2: 76   # ~1 o'clock — slightly above unity (governs output with MASTER on)
+      #     tone_2: 64     # noon — neutral
+      #     presence_2: 0  # down — default
+      #     gain_2_type: 1  # od — classic King of Tone voice
+      #     gain_1: 38     # ~10 o'clock — moderate boost push into Ch2
+      #     volume_1: 83   # ~1–2 o'clock — pushes Ch2 harder; not a volume control with MASTER on
+      #     tone_1: 64     # noon — neutral
+      #     presence_1: 0  # down — default
+      #     gain_1_type: 2  # boost — transparent overloader feeding Ch2
+      #     treble_boost: 1  # off — balanced KOT voice; swap to 2 (half_sun) for brighter solos
+      #     dip_master: 1   # MASTER on — VOL2 governs output at all times; Ch1 can't spike levels
+
+      # - id: bad-bros
+      #   name: Bad Bros
+      #   preset_number: 6
+      #   notes: "Max gnarly stack — doc recipe ⑨ (factory 'Bad Bros'). Rangemaster into BOOST into DIST, both HI GAINs on. TONE2 dialed back slightly to offset the treble-heavy stack."
+      #   parameters:
+      #     gain_2: 89     # ~2 o'clock — high-gain distortion
+      #     volume_2: 76   # ~1 o'clock — final output (MASTER on)
+      #     tone_2: 57     # ~11 o'clock — slightly dark to offset treble booster stack
+      #     presence_2: 0  # down — don't pile top end into an already-bright signal
+      #     gain_2_type: 2  # dist — hard clipping for max saturation
+      #     gain_1: 96     # ~2–3 o'clock — driving treble booster and Ch2 hard
+      #     volume_1: 70   # near unity — MASTER means this doesn't affect output level
+      #     tone_1: 64     # noon
+      #     presence_1: 0  # down
+      #     gain_1_type: 2  # boost — Ch1 as overloader feeding Ch2
+      #     treble_boost: 2  # half_sun — classic Rangemaster voice up front for snarl
+      #     dip_hi_gain_1: 1  # HI GAIN 1 on — +25% gain on Ch1, LED red
+      #     dip_hi_gain_2: 1  # HI GAIN 2 on — +25% gain on Ch2, LED red
+      #     dip_master: 1     # MASTER on — VOL2 controls final output; needed with stacked boosts
 
   - id: billy-strings-wombtone
     manufacturer: Chase Bliss Audio
@@ -92,27 +110,40 @@ devices:
         preset_number: 3
         notes: Deep, slow vibrato for ambient swells and pads
         parameters:
-          feed: 90     # Moderate feedback for smooth warbling
-          volume: 76   # Slight boost
-          mix: 89      # Heavy wet blend for pronounced effect
-          rate: 64     # Slow speed — lazy, hypnotic pulse
-          depth: 95   # Deep modulation for dramatic warble
+          feed: 64     # Noon
+          volume: 70   # Noon
+          mix: 64      # Noon
+          rate: 48     # Slow speed — lazy, hypnotic pulse
+          depth: 45   # chill modulation for dramatic warble
           form: 64     # Sine-like waveform
           ramp: 0      # No ramping
           clock_division: 2  # quarter — base tempo reference
-      - id: trem-pulse
-        name: Trem Pulse
-        preset_number: 4
-        notes: Rhythmic tremolo for arpeggiated passages
-        parameters:
-          feed: 83     # Higher feedback for sharper edge
-          volume: 70   # Unity
-          mix: 102     # Heavy blend for pronounced tremolo
-          rate: 91     # Medium-fast for rhythmic pulse
-          depth: 108   # Deep chop
-          form: 114    # Square-ish waveform for hard trem cuts
-          ramp: 0      # No ramping
-          clock_division: 4  # eighth — faster rhythmic subdivision
+      # - id: lead-vibe
+      #   name: Lead Vibe
+      #   preset_number: 4
+      #   notes: Deep, slow vibrato for ambient swells and pads
+      #   parameters:
+      #     feed: 90     # Moderate feedback for smooth warbling
+      #     volume: 76   # Slight boost
+      #     mix: 89      # Heavy wet blend for pronounced effect
+      #     rate: 64     # Slow speed — lazy, hypnotic pulse
+      #     depth: 95   # Deep modulation for dramatic warble
+      #     form: 64     # Sine-like waveform
+      #     ramp: 0      # No ramping
+      #     clock_division: 2  # quarter — base tempo reference
+      # - id: trem-pulse
+      #   name: Trem Pulse
+      #   preset_number: 5
+      #   notes: Rhythmic tremolo for arpeggiated passages
+      #   parameters:
+      #     feed: 83     # Higher feedback for sharper edge
+      #     volume: 70   # Unity
+      #     mix: 102     # Heavy blend for pronounced tremolo
+      #     rate: 91     # Medium-fast for rhythmic pulse
+      #     depth: 108   # Deep chop
+      #     form: 114    # Square-ish waveform for hard trem cuts
+      #     ramp: 0      # No ramping
+      #     clock_division: 4  # eighth — faster rhythmic subdivision
 
   - id: hx-stomp
     manufacturer: Line 6
@@ -122,26 +153,26 @@ devices:
       type: midi
       midi_channel: 1
     presets:
-      - id: princeton
-        name: Princeton D
+      - id: clean
+        name: Clean
         preset_number: 36
-        hlx_file: hlx/Princeton D.hlx
-        notes: Clean Fender tone, D path
-      - id: marshall
-        name: Marshall D
-        preset_number: 37
-        hlx_file: hlx/Marshall D.hlx
-        notes: British crunch, D path
-      - id: boogie-pb
-        name: Boogie PB
-        preset_number: 38
-        hlx_file: hlx/Boogie PB.hlx
-        notes: Mesa/Boogie-style high gain lead, D path
-      - id: doogie-pb
-        name: Doogie PB
-        preset_number: 39
-        hlx_file: hlx/Doogie PB.hlx
-        notes: Saturated lead tone with British character, D path
+        hlx_file: hlx/Clean.hlx
+        notes: Clean Fender tone
+      # - id: marshall
+      #   name: Marshall D
+      #   preset_number: 37
+      #   hlx_file: hlx/Marshall D.hlx
+      #   notes: British crunch, D path
+      # - id: boogie-pb
+      #   name: Boogie PB
+      #   preset_number: 38
+      #   hlx_file: hlx/Boogie PB.hlx
+      #   notes: Mesa/Boogie-style high gain lead, D path
+      # - id: doogie-pb
+      #   name: Doogie PB
+      #   preset_number: 39
+      #   hlx_file: hlx/Doogie PB.hlx
+      #   notes: Saturated lead tone with British character, D path
 
   - id: mood
     manufacturer: Chase Bliss Audio
@@ -152,75 +183,76 @@ devices:
       midi_channel: 2
       model: Mood MkII
     presets:
-      - id: liquid-ambient-wash
-        name: Liquid Ambient Wash
+      - id: ambient-reverse-tape
+        name: Ambient Reverse Tape
         preset_number: 3
-        notes: "Frozen pad under clean Fender tone — doc recipe ①a. Freeze a chord into an infinite pad, solo dry over it. LATCH keeps freeze hands-free."
+        notes: "Ambient reverb with a slight reverse tape loop"
         parameters:
-          time: 95        # 2–3 o'clock — long reverb decay
-          mix: 48         # 11 o'clock — subtle wet blend, preserves dry signal
-          length: 64      # noon — neutral, looper not primary here
-          wet_modify: 80  # 1 o'clock — medium smear/diffusion
-          clock: 127      # 64k (fully CW) — clean/hi-fi, no aliasing
-          loop_modify: 64 # noon — normal forward playback
+          time: 32        # 2–3 o'clock — long reverb decay
+          mix: 77         # 11 o'clock — subtle wet blend, preserves dry signal
+          length: 50      # noon — neutral, looper not primary here
+          wet_modify: 44  # 1 o'clock — medium smear/diffusion
+          clock: 44      # 64k (fully CW) — clean/hi-fi, no aliasing
+          loop_clock_division: 5
+          loop_modify: 30 # noon — normal forward playback
           ramp_speed: 0   # No ramping — static pad when frozen
           wet_channel: 0  # reverb — ambient wash mode
-          routing: 0      # in — wet processes live signal only
+          routing: 2      # loop — reverb processes loop output only (not live signal)
           loop: 1         # tape — warm loop texture if looper engaged
           dip_r_trails: 127 # TRAILS on — wet fades smoothly after bypass
           dip_r_latch: 127  # LATCH on — freeze stays hands-free after hold
-      - id: dub-tape-delay
-        name: Dub Tape Delay
-        preset_number: 4
-        notes: "Rhythmic dub delay texture under crunch — doc recipe ②. High feedback just below runaway; roll CLOCK down live to pitch-drop repeats into dub bloops."
-        parameters:
-          time: 64        # noon — medium delay time
-          mix: 64         # noon — balanced wet/dry
-          length: 64      # noon — neutral
-          wet_modify: 95  # 2–3 o'clock — high feedback, just below runaway
-          clock: 50       # ~24–32k — slight warmth/tape character (roll CW for clean, CCW for bloop)
-          loop_modify: 64 # noon — normal playback
-          ramp_speed: 0   # No ramping — manual CLOCK sweep is the performance move
-          wet_channel: 1  # delay — rhythmic repeats
-          routing: 0      # in — wet processes live signal only
-          loop: 1         # tape — warm loop bed
-          dip_r_trails: 127 # TRAILS on — delay fades on bypass
-      - id: granular-bloop-cloud
-        name: Granular Bloop Cloud
-        preset_number: 5
-        notes: "Slip-mode granular re-sampler — doc recipe ④. Single notes shatter into re-pitched grains. Hold left footswitch to freeze a grain cloud and play over it."
-        parameters:
-          time: 45        # 10–11 o'clock — fast refresh rate, more grain scramble
-          mix: 64         # noon — even wet/dry balance
-          length: 64      # noon — neutral
-          wet_modify: 70  # Just off-center — grains slightly slowed/reversed for bloopy character
-          clock: 45       # ~16–32k — some aliasing adds grit to grains over high-gain lead
-          loop_modify: 64 # noon — neutral loop playback
-          ramp_speed: 0   # No ramping
-          wet_channel: 2  # slip — granular re-sampler mode
-          routing: 0      # in — processes live signal
-          loop: 1         # tape — warm loop texture
-          dip_r_trails: 127 # TRAILS on — grain cloud fades on bypass
-      - id: reverse-stretch-drift
-        name: Reverse-Stretch Drift Cloud
-        preset_number: 6
-        notes: "Smeared reversed time-stretch cloud — doc recipe ⑦ (Tier 2). Chord becomes a drifting, reversed, pitch-stretched cloud. BOUNCE + CLOCK ramp = self-generating drone. Wacky territory."
-        parameters:
-          time: 95        # 2–3 o'clock — long reverb decay washing over the loop cloud
-          mix: 64         # noon — blend frozen reverb with loop
-          length: 30      # Small — small slice size for stretch mode granular feel
-          wet_modify: 80  # Moderate reverb smear/diffusion
-          clock: 127      # 64k — clean input into stretch processor
-          loop_modify: 25 # Off-center/negative — stretch + reverse playback direction
-          ramp_speed: 30  # Slow auto-ramp for gradual pitch drift (BOUNCE must be on)
-          wet_channel: 0  # reverb — washes over the stretch cloud
-          routing: 2      # wet (loop only) — reverb only touches loop, live stays dry
-          loop: 2         # stretch — time-stretch slices
-          dip_l_bounce: 127 # BOUNCE on — CLOCK ramps on waveform for generative drift
-          dip_l_clock: 127  # CLOCK ramp dip — auto-modulates clock for pitch drift
-          dip_r_trails: 127 # TRAILS on — cloud fades on bypass
-          dip_r_latch: 127  # LATCH on — freeze stays hands-free
-          dip_r_smooth: 127 # SMOOTH on — fluid CLOCK glides (removes stepping)
+      # - id: dub-tape-delay
+      #   name: Dub Tape Delay
+      #   preset_number: 4
+      #   notes: "Rhythmic dub delay texture under crunch — doc recipe ②. High feedback just below runaway; roll CLOCK down live to pitch-drop repeats into dub bloops."
+      #   parameters:
+      #     time: 64        # noon — medium delay time
+      #     mix: 64         # noon — balanced wet/dry
+      #     length: 64      # noon — neutral
+      #     wet_modify: 95  # 2–3 o'clock — high feedback, just below runaway
+      #     clock: 50       # ~24–32k — slight warmth/tape character (roll CW for clean, CCW for bloop)
+      #     loop_modify: 64 # noon — normal playback
+      #     ramp_speed: 0   # No ramping — manual CLOCK sweep is the performance move
+      #     wet_channel: 1  # delay — rhythmic repeats
+      #     routing: 0      # in — wet processes live signal only
+      #     loop: 1         # tape — warm loop bed
+      #     dip_r_trails: 127 # TRAILS on — delay fades on bypass
+      # - id: granular-bloop-cloud
+      #   name: Granular Bloop Cloud
+      #   preset_number: 5
+      #   notes: "Slip-mode granular re-sampler — doc recipe ④. Single notes shatter into re-pitched grains. Hold left footswitch to freeze a grain cloud and play over it."
+      #   parameters:
+      #     time: 45        # 10–11 o'clock — fast refresh rate, more grain scramble
+      #     mix: 64         # noon — even wet/dry balance
+      #     length: 64      # noon — neutral
+      #     wet_modify: 70  # Just off-center — grains slightly slowed/reversed for bloopy character
+      #     clock: 45       # ~16–32k — some aliasing adds grit to grains over high-gain lead
+      #     loop_modify: 64 # noon — neutral loop playback
+      #     ramp_speed: 0   # No ramping
+      #     wet_channel: 2  # slip — granular re-sampler mode
+      #     routing: 0      # in — processes live signal
+      #     loop: 1         # tape — warm loop texture
+      #     dip_r_trails: 127 # TRAILS on — grain cloud fades on bypass
+      # - id: reverse-stretch-drift
+        # name: Reverse-Stretch Drift Cloud
+        # preset_number: 6
+        # notes: "Smeared reversed time-stretch cloud — doc recipe ⑦ (Tier 2). Chord becomes a drifting, reversed, pitch-stretched cloud. BOUNCE + CLOCK ramp = self-generating drone. Wacky territory."
+        # parameters:
+        #   time: 95        # 2–3 o'clock — long reverb decay washing over the loop cloud
+        #   mix: 64         # noon — blend frozen reverb with loop
+        #   length: 30      # Small — small slice size for stretch mode granular feel
+        #   wet_modify: 80  # Moderate reverb smear/diffusion
+        #   clock: 127      # 64k — clean input into stretch processor
+        #   loop_modify: 25 # Off-center/negative — stretch + reverse playback direction
+        #   ramp_speed: 30  # Slow auto-ramp for gradual pitch drift (BOUNCE must be on)
+        #   wet_channel: 0  # reverb — washes over the stretch cloud
+        #   routing: 2      # wet (loop only) — reverb only touches loop, live stays dry
+        #   loop: 2         # stretch — time-stretch slices
+        #   dip_l_bounce: 127 # BOUNCE on — CLOCK ramps on waveform for generative drift
+        #   dip_l_clock: 127  # CLOCK ramp dip — auto-modulates clock for pitch drift
+        #   dip_r_trails: 127 # TRAILS on — cloud fades on bypass
+        #   dip_r_latch: 127  # LATCH on — freeze stays hands-free
+        #   dip_r_smooth: 127 # SMOOTH on — fluid CLOCK glides (removes stepping)
 
   - id: mc6
     manufacturer: Morningstar
@@ -233,40 +265,40 @@ devices:
         clean:
           description: "Clean Fender with phaser vibe and doubling"
           presets:
-            hx-stomp: princeton
+            hx-stomp: clean
             billy-strings-wombtone: slow-vibe
             brothers: transparent-lift
-            mood: liquid-ambient-wash
-        crunch:
-          description: "British crunch with Brothers OD and ambient pad"
-          presets:
-            hx-stomp: marshall
-            brothers: am-crunch
-            billy-strings-wombtone: slow-vibe
-            mood: dub-tape-delay
-        lead:
-          description: "High gain Boogie lead with Brothers boost and broken tape"
-          presets:
-            hx-stomp: boogie-pb
-            brothers: kot-lead-stack
-            billy-strings-wombtone: slow-vibe
-            mood: granular-bloop-cloud
-        wacky:
-          description: "BOC saturated lead with tremolo and Sigur Rós drone"
-          presets:
-            hx-stomp: doogie-pb
-            brothers: bad-bros
-            billy-strings-wombtone: trem-pulse
-            mood: reverse-stretch-drift
+            mood: ambient-reverse-tape
+        # boogie:
+        #   description: "High gain Boogie lead with Brothers boost and broken tape"
+        #   presets:
+        #     hx-stomp: boogie-pb
+        #     brothers: kot-lead-stack
+        #     billy-strings-wombtone: lead-vibe
+        #     mood: granular-bloop-cloud
+        # wacky:
+        #   description: "BOC saturated lead with tremolo and Sigur Rós drone"
+        #   presets:
+        #     hx-stomp: doogie-pb
+        #     brothers: bad-bros
+        #     billy-strings-wombtone: trem-pulse
+        #     mood: reverse-stretch-drift
+        # marshall:
+        #   description: "British crunch with Brothers OD and ambient pad"
+        #   presets:
+        #     hx-stomp: marshall
+        #     brothers: am-crunch
+        #     billy-strings-wombtone: slow-vibe
+        #     mood: dub-tape-delay
       banks:
         - bank: 1
           name: Main Rig
           switches:
             A:
               scene: clean
-            B:
-              scene: crunch
-            C:
-              scene: lead
-            D:
-              scene: wacky
+            # B:
+            #   scene: crunch
+            # C:
+            #   scene: lead
+            # D:
+            #   scene: wacky
