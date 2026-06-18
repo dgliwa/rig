@@ -216,6 +216,24 @@ devices:
           loop: 1         # tape — warm loop texture if looper engaged
           dip_r_trails: 127 # TRAILS on — wet fades smoothly after bypass
           dip_r_latch: 127  # LATCH on — freeze stays hands-free after hold
+
+      - id: chorus-shimmer
+        name: Chorus Shimmer
+        preset_number: 7
+        notes: "Short-delay chorus shimmer — wet_channel delay path at short time (35) creates chorus-like shimmer. Routing: out covers live signal and loop output simultaneously. Think Smashing Pumpkins 'Today' rhythm chorus texture."
+        parameters:
+          time: 35         # Short delay — chorus-character shimmer range
+          mix: 72          # Present, audible chorus texture — not a background shimmer
+          length: 50       # noon — neutral
+          wet_modify: 40   # Moderate feedback — adds depth without runaway
+          clock: 60        # Moderate — hi-fi with slight warmth
+          loop_modify: 64  # noon — normal playback
+          ramp_speed: 0    # No ramping
+          wet_channel: 1   # delay — chorus-like shimmer path
+          routing: 1       # out — wet applies to full output (live signal + loop)
+          loop: 1          # tape — warm texture
+          dip_r_trails: 127  # TRAILS on — smooth bypass fade
+
       # - id: dub-tape-delay
       #   name: Dub Tape Delay
       #   preset_number: 4
