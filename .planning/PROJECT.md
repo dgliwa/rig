@@ -8,24 +8,21 @@ Infrastructure-as-Code configuration for a personal guitar rig (HX Stomp + Mood 
 
 A single `rig validate` should confirm the config repo is consistent and ready to apply — no guessing, no manual cross-referencing.
 
-## Current Milestone: v1.3 — 90s Rock Sound
+## Current State
 
-**Goal:** Configure all rig devices with a Weezer-style 90s rock preset set — transparent boost, aggressive distortion, chorus textures, and an envelope-filter wah — then wire everything into a new HX Stomp Mesa Boogie amp scene.
+**Shipped: v1.3 — 90s Rock Sound (2026-06-18)**
 
-**Target features:**
-- Brothers AM — Channel A: light/transparent boost preset; Channel B: kicking distortion preset
-- Mood MkII — new chorus-y preset
-- Wombtone MkII — new envelope-filter/auto-wah preset
-- HX Stomp — Mesa Boogie + 4x12 cab patch with delay, reverb, and optional chorus in FX loop
-- New rock scene — wire all devices into a MC6-accessible rock performance scene
+All four devices now have rock-ready presets wired into a second live scene. `rig validate` reports "5 pedals, 2 scenes — All cross-references valid." MC6 Bank 1 Switch B activates the full rock signal chain.
 
 ## Current State
 
-**Shipped: v1.2 — Flesh Out the Rig (2026-06-09)**
+**Previously shipped: v1.2 — Flesh Out the Rig (2026-06-09)**
 
-The rig config is now a single `rig.yaml` (756 lines) with 5 devices, 15 presets, and 4 real scenes. `rig validate` reports "5 pedals, 4 scenes — All cross-references valid."
+The rig config became a single `rig.yaml` (756 lines) with 5 devices, 15 presets, and 4 real scenes.
 
-**Deferred:** Phase 2 documentation debt (missing VERIFICATION.md, REQUIREMENTS.md traceability not updated). Nyquist validation never run. These were accepted at close.
+**Previously shipped: v1.1 — Architecture Migration (2026-06-08)**
+
+Renamed `pedals/` → `devices/`, updated `signal-chain.yaml`, confirmed `rig validate` passes.
 
 ## Requirements
 
@@ -42,14 +39,22 @@ The rig config is now a single `rig.yaml` (756 lines) with 5 devices, 15 presets
 - ✓ PRESET-02: Brothers AM device with real presets — v1.2
 - ✓ PRESET-03: Mood MkII presets reviewed and annotated — v1.2
 - ✓ PRESET-04: Non-obvious parameter values annotated — v1.2
-- ✓ SCENE-01: Accurate scene descriptions — v1.2
-- ✓ SCENE-02: Wombtone and Brothers in scenes — v1.2
-- ✓ SCENE-03: MC6 bank/switch performance workflow — v1.2
+- ✓ SCENE-01 (v1.2): Accurate scene descriptions — v1.2
+- ✓ SCENE-02 (v1.2): Wombtone and Brothers in scenes — v1.2
+- ✓ SCENE-03 (v1.2): MC6 bank/switch performance workflow — v1.2
+- ✓ BROTHERS-01: `rock-drive` Brothers dual-channel preset (Ch1 boost, Ch2 dist) — v1.3
+- ✓ MOOD-01: `chorus-shimmer` Mood MkII preset for rock signal chain — v1.3
+- ✓ WOMBTONE-01: `envelope-filter` Wombtone MkII preset (cocked-wah character) — v1.3
+- ✓ HX-01: `mesa-rock` HX Stomp preset entry in rig.yaml — v1.3
+- ✓ SCENE-01 (v1.3): `rock` scene wiring all four devices in mc6.config.scenes — v1.3
+- ✓ SCENE-02 (v1.3): MC6 Bank 1 Switch B mapped to rock scene — v1.3
+- ✓ SCENE-03 (v1.3): `rig validate` passes with all rock presets and scene — v1.3
 
 ### Active
 
 - [ ] **GEN-01**: `rig generate mc6` produces valid MC6 bank JSON from scene definitions
 - [ ] **GEN-02**: Generated MC6 JSON can be loaded onto hardware without manual editing
+- [ ] **WOMBTONE-02**: True envelope-filter auto-wah tracking pick attack dynamically (requires expression pedal + MC6 CC mapping — deferred from v1.3 due to hardware limitation)
 
 ### Out of Scope
 
@@ -62,15 +67,16 @@ The rig config is now a single `rig.yaml` (756 lines) with 5 devices, 15 presets
 ## Context
 
 - **rig-cli**: v1.2+ (single-file schema); `devices/` directory-based loading deprecated
-- **rig.yaml**: 756 lines, 5 devices, 15 presets, 4 scenes
+- **rig.yaml**: 349 lines, 5 devices, 18+ presets, 2 active scenes (rock + clean); additional scenes (crunch, lead, wacky) remain commented, ready to activate
 - **Devices**: brothers (Brothers AM), billy-strings-wombtone (Wombtone MkII), hx-stomp (HX Stomp), mood (Mood MkII), mc6 (MC6 controller)
 - **Signal chain**: brothers → wombtone → hx-stomp → mood → mc6
 - **MIDI channels**: brothers=4, wombtone=3, hx-stomp=1, mood=2, mc6=1
-- **Scenes**: clean (Fender + vibe + doubling), crunch (British crunch + OD + pad), lead (Boogie + boost + broken tape), wacky (BOC lead + trem + drone)
-- **MC6 Bank 1**: A=clean, B=crunch, C=lead, D=wacky
-- **`rig validate`**: "5 pedals, 4 scenes — All cross-references valid"
+- **Active scenes**: clean (Fender + vibe + doubling), rock (Mesa Boogie + rock-drive + chorus-shimmer + envelope-filter)
+- **MC6 Bank 1**: A=clean, B=rock
+- **`rig validate`**: "5 pedals, 2 scenes — All cross-references valid"
 - **Controls per device**: brothers=28, wombtone=12, hx-stomp=0, mood=45, mc6=0
-- **Doc debt**: Phase 2 missing VERIFICATION.md; no Nyquist validation run on any phase
+- **CBA encoding**: dipswitches 0/127 (never true/false/1); Brothers gain_N_type 0=boost/1=od/2=dist; Wombtone rate=0 freezes phase (cocked-wah)
+- **Doc debt**: Phase 2 missing VERIFICATION.md; no Nyquist validation run on any phase (accepted at v1.2 close)
 
 ## Constraints
 
@@ -89,6 +95,11 @@ The rig config is now a single `rig.yaml` (756 lines) with 5 devices, 15 presets
 | MC6 Bank 1: A=clean, B=crunch, C=lead, D=wacky | Performance order: most-used first | ✓ Good |
 | Mood presets from official doc recipes | Avoids low-quality fuzz; uses vetted sounds | ✓ Good |
 | Accept Phase 2 doc debt at close | Verification and traceability are documentation-only gaps | ⚠ Revisit |
+| MIDI channels: mood=2, wombtone=3, brothers=4 | CBA defaults; avoids conflicts | ✓ Good |
+| HX Stomp .hlx file out of scope | User creates in HX Edit; rig.yaml entry only | ✓ Good |
+| CBA dipswitches 0/127 (not true/false) | CBA MIDI spec requirement | ✓ Good |
+| Brothers gain_N_type 0-indexed | 0=boost, 1=od, 2=dist per hardware spec | ✓ Good |
+| WOMBTONE-02 deferred from v1.3 | Hardware lacks envelope follower; requires expression pedal add-on | ✓ Good |
 
 ---
-*Last updated: 2026-06-09 — v1.2 milestone shipped*
+*Last updated: 2026-06-18 — v1.3 milestone shipped*
