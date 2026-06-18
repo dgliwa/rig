@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.3
 milestone_name: 90s Rock Sound
 status: planning
-last_updated: "2026-06-18T13:46:05.438Z"
+last_updated: "2026-06-18"
 last_activity: 2026-06-18
 progress:
-  total_phases: 0
+  total_phases: 3
   completed_phases: 0
-  total_plans: 0
+  total_plans: 3
   completed_plans: 0
   percent: 0
 ---
@@ -17,63 +17,61 @@ progress:
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-06-08)
+See: .planning/PROJECT.md (updated 2026-06-18)
 
 **Core value:** A single `rig validate` confirms the config repo is consistent and ready to apply
-**Current focus:** Phase 03 — cba-devices-presets
+**Current focus:** Phase 5 — CBA Device Presets
 
-## v1.1 Shipped
+## Current Position
 
-Milestone v1.1 Architecture Migration archived 2026-06-08.
+Phase: 5 of 7 (CBA Device Presets)
+Plan: —
+Status: Ready to plan
+Last activity: 2026-06-18 — v1.3 roadmap created, phases 5-7 defined
 
-- `pedals/` renamed to `devices/`
-- `signal-chain.yaml` updated to `device:` field
-- mc6, Mood presets, scenes committed
-- `rig validate` exits 0
-
-**Known gap deferred to v1.2:** rig-cli uses a single-file schema (devices inline in rig.yaml). The directory-based YAML files are not loaded; `rig validate` shows 0 devices/0 scenes. Full content validation requires v1.2 migration.
+Progress: [░░░░░░░░░░] 0%
 
 ## Performance Metrics
 
 **Velocity:**
+- Total plans completed (v1.2): 3
+- Average duration: ~20 min
+- Total execution time: ~1 hour (v1.2)
 
-- v1.1: 1 phase, 1 plan, ~1 day
+**By Phase:**
+
+| Phase | Plans | Total | Avg/Plan |
+|-------|-------|-------|----------|
+| Phase 04-real-scenes P04-01 | 1 | 20min | 20min |
+
+**Recent Trend:**
+- Last plan: 20 min (Phase 4)
+- Trend: Stable
 
 ## Accumulated Context
 
 ### Decisions
 
 Decisions are logged in PROJECT.md Key Decisions table.
+Recent decisions affecting current work:
 
-- Defer single-file migration to v1.2 — v1.1 scope was naming migration only
+- v1.3: MIDI channels: mood=2, wombtone=3, brothers=4 (CBA defaults)
+- v1.3: HX Stomp .hlx file is user-created in HX Edit; rig.yaml entry only is in scope
+- v1.3: CBA dipswitches use 0 (off) / 127 (on) — never true/false/1
+- v1.3: Brothers gain_N_type: 0=boost, 1=od, 2=dist (0-indexed)
+- v1.3: Wombtone rate: 0 freezes phase (static cocked-wah); feed 96+ adds resonance
+- v1.3: Mood wet_channel: 1 = delay path (chorus-like)
 
 ### Pending Todos
 
-- Run `/gsd-plan-phase 3` to plan CBA Devices & Presets
+None.
 
 ### Blockers/Concerns
 
-None.
+- Phase 6 mesa-rock entry requires user to create `hlx/Mesa Rock.hlx` manually in HX Edit before the scene in Phase 7 can be fully tested end-to-end. The rig.yaml entry can be written regardless.
 
 ## Session Continuity
 
-Last session: 2026-06-09T12:47:23.031Z
-Stopped at: Phase 4 context gathered
-Resume file: .planning/phases/04-real-scenes/04-CONTEXT.md
-
-## Current Position
-
-Phase: Not started (defining requirements)
-Plan: —
-Status: Defining requirements
-Last activity: 2026-06-18 — Milestone v1.3 started
-
-## Performance Metrics
-
-| Phase | Plan | Duration | Notes |
-|-------|------|----------|-------|
-| Phase 04-real-scenes P04-01 | 20min | 1 tasks | 1 files |
-
-## Operator Next Steps
-
-- Start the next milestone with /gsd-new-milestone
+Last session: 2026-06-18
+Stopped at: Roadmap created — phases 5-7 defined
+Resume file: None

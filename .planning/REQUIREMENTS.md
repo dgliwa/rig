@@ -45,19 +45,19 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| BROTHERS-01 | TBD | Pending |
-| MOOD-01 | TBD | Pending |
-| WOMBTONE-01 | TBD | Pending |
-| HX-01 | TBD | Pending |
-| SCENE-01 | TBD | Pending |
-| SCENE-02 | TBD | Pending |
-| SCENE-03 | TBD | Pending |
+| BROTHERS-01 | Phase 5 | Pending |
+| MOOD-01 | Phase 5 | Pending |
+| WOMBTONE-01 | Phase 5 | Pending |
+| HX-01 | Phase 6 | Pending |
+| SCENE-01 | Phase 7 | Pending |
+| SCENE-02 | Phase 7 | Pending |
+| SCENE-03 | Phase 7 | Pending |
 
 **Coverage:**
 - v1.3 requirements: 7 total
-- Mapped to phases: 0 (roadmap not yet created)
-- Unmapped: 7 ⚠️
+- Mapped to phases: 7
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-06-18*
-*Last updated: 2026-06-18 after initial definition*
+*Last updated: 2026-06-18 — traceability mapped to phases 5-7*
