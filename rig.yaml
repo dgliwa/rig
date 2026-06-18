@@ -173,6 +173,11 @@ devices:
         preset_number: 36
         hlx_file: hlx/Clean.hlx
         notes: Clean Fender tone
+      - id: mesa-rock
+        name: Mesa Rock
+        preset_number: 37
+        hlx_file: hlx/MesaRock.hlx
+        notes: Mesa Boogie amp model, high-gain rock tone
       # - id: marshall
       #   name: Marshall D
       #   preset_number: 37
