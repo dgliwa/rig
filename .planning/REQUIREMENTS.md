@@ -7,15 +7,15 @@
 
 ### Brothers AM
 
-- [ ] **BROTHERS-01**: User can engage a `rock-drive` Brothers preset that activates Ch1 transparent boost (louder than `transparent-lift`) and Ch2 kicking DIST distortion as a single dual-channel preset
+- [x] **BROTHERS-01**: User can engage a `rock-drive` Brothers preset that activates Ch1 transparent boost (louder than `transparent-lift`) and Ch2 kicking DIST distortion as a single dual-channel preset
 
 ### Mood MkII
 
-- [ ] **MOOD-01**: User can engage a `chorus-shimmer` Mood preset that adds a chorus-like shimmer (short-delay path) to the rock signal chain
+- [x] **MOOD-01**: User can engage a `chorus-shimmer` Mood preset that adds a chorus-like shimmer (short-delay path) to the rock signal chain
 
 ### Wombtone MkII
 
-- [ ] **WOMBTONE-01**: User can engage an `envelope-filter` Wombtone preset that delivers a cocked-wah phaser character (high resonance, deep slow sweep)
+- [x] **WOMBTONE-01**: User can engage an `envelope-filter` Wombtone preset that delivers a cocked-wah phaser character (high resonance, deep slow sweep)
 
 ### HX Stomp
 
@@ -45,15 +45,16 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| BROTHERS-01 | Phase 5 | Pending |
-| MOOD-01 | Phase 5 | Pending |
-| WOMBTONE-01 | Phase 5 | Pending |
+| BROTHERS-01 | Phase 5 | Complete |
+| MOOD-01 | Phase 5 | Complete |
+| WOMBTONE-01 | Phase 5 | Complete |
 | HX-01 | Phase 6 | Pending |
 | SCENE-01 | Phase 7 | Pending |
 | SCENE-02 | Phase 7 | Pending |
 | SCENE-03 | Phase 7 | Pending |
 
 **Coverage:**
+
 - v1.3 requirements: 7 total
 - Mapped to phases: 7
 - Unmapped: 0
