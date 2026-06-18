@@ -8,6 +8,17 @@ Infrastructure-as-Code configuration for a personal guitar rig (HX Stomp + Mood 
 
 A single `rig validate` should confirm the config repo is consistent and ready to apply — no guessing, no manual cross-referencing.
 
+## Current Milestone: v1.3 — 90s Rock Sound
+
+**Goal:** Configure all rig devices with a Weezer-style 90s rock preset set — transparent boost, aggressive distortion, chorus textures, and an envelope-filter wah — then wire everything into a new HX Stomp Mesa Boogie amp scene.
+
+**Target features:**
+- Brothers AM — Channel A: light/transparent boost preset; Channel B: kicking distortion preset
+- Mood MkII — new chorus-y preset
+- Wombtone MkII — new envelope-filter/auto-wah preset
+- HX Stomp — Mesa Boogie + 4x12 cab patch with delay, reverb, and optional chorus in FX loop
+- New rock scene — wire all devices into a MC6-accessible rock performance scene
+
 ## Current State
 
 **Shipped: v1.2 — Flesh Out the Rig (2026-06-09)**
@@ -15,15 +26,6 @@ A single `rig validate` should confirm the config repo is consistent and ready t
 The rig config is now a single `rig.yaml` (756 lines) with 5 devices, 15 presets, and 4 real scenes. `rig validate` reports "5 pedals, 4 scenes — All cross-references valid."
 
 **Deferred:** Phase 2 documentation debt (missing VERIFICATION.md, REQUIREMENTS.md traceability not updated). Nyquist validation never run. These were accepted at close.
-
-## Next Milestone Goals
-
-**v1.3+ MC6 Generation & Polish** — Planned
-
-Potential directions (determined via `/gsd-new-milestone`):
-- MC6 JSON generation (`rig generate mc6`)
-- More preset variations
-- Schema refinements
 
 ## Requirements
 
