@@ -1,15 +1,15 @@
 name: Derek's Rig
 description: Brothers → Wombtone → HX Stomp → Mood MkII (MC6 controller)
 devices:
-  - id: brothers
-    manufacturer: Chase Bliss Audio
+- id: brothers
+  manufacturer: Chase Bliss Audio
+  model: Brothers AM
+  type: digital
+  config:
+    type: chase_bliss
+    midi_channel: 4
     model: Brothers AM
-    type: digital
-    config:
-      type: chase_bliss
-      midi_channel: 4
-      model: Brothers AM
-    presets:
+  presets:
       # - id: am-crunch
       #   name: AM Crunch
       #   preset_number: 3
@@ -27,36 +27,41 @@ devices:
       #     treble_boost: 2  # half_sun — subtle treble lift
       #     gain_1_type: 2   # boost — clean boost side
 
-      - id: transparent-lift
-        name: Transparent Lift
-        preset_number: 4
-        notes: "Single-channel clean boost — doc recipe ①. Ch1 BOOST at low gain lifts volume and feel without adding grit. Ch2 bypassed. Treble toggle OFF for the pure KOT voice (no Rangemaster)."
-        parameters:
-          gain_1: 13     # ~8 o'clock — minimal gain, pure volume lift
-          volume_1: 83   # ~1–2 o'clock — noticeable boost above unity
-          tone_1: 64     # noon — neutral
-          presence_1: 0  # down — default; stacking treble boost adds ice-pick top end
-          gain_1_type: 2  # boost — cleanest, loudest mode
-          treble_boost: 1  # off — pure KOT voice
-          channel_2_bypass: 0  # Ch2 bypassed — single-channel preset
+  - id: transparent-lift
+    name: Transparent Lift
+    preset_number: 4
+    notes: Single-channel clean boost — doc recipe ①. Ch1 BOOST at low gain 
+      lifts volume and feel without adding grit. Ch2 bypassed. Treble toggle OFF
+      for the pure KOT voice (no Rangemaster).
+    parameters:
+      gain_1: 13         # ~8 o'clock — minimal gain, pure volume lift
+      volume_1: 83       # ~1–2 o'clock — noticeable boost above unity
+      tone_1: 64         # noon — neutral
+      presence_1: 0      # down — default; stacking treble boost adds ice-pick top end
+      gain_1_type: 2      # boost — cleanest, loudest mode
+      treble_boost: 1      # off — pure KOT voice
+      channel_2_bypass: 0      # Ch2 bypassed — single-channel preset
 
-      - id: rock-drive
-        name: Rock Drive
-        preset_number: 5
-        notes: "Dual-channel rock preset — Ch1 BOOST pushes louder than transparent-lift (Buddy Holly rhythm level); Ch2 DIST with HI GAIN 2 engaged for Say It Ain't So solo saturation. Both channels active simultaneously."
-        parameters:
-          gain_1: 42       # ~10 o'clock — moderate boost, noticeably driven vs transparent-lift (13)
-          volume_1: 90     # ~2 o'clock — louder than transparent-lift (83); rhythm level push
-          tone_1: 64       # noon — neutral
-          presence_1: 0    # down — default
-          gain_1_type: 2   # boost — cleanest, loudest Ch1 mode (0=boost, 1=od, 2=dist)
-          gain_2: 89       # ~2 o'clock — high-gain distortion, solo territory
-          volume_2: 76     # ~1 o'clock — output level with Ch2 distortion
-          tone_2: 64       # noon — neutral
-          presence_2: 0    # down — default
-          gain_2_type: 2   # dist — hard clipping for saturation
-          treble_boost: 1  # off — pure KOT voice, no Rangemaster coloring
-          dip_hi_gain_2: 127  # HI GAIN 2 on — +25% gain on Ch2 for lead-sustain saturation
+  - id: rock-drive
+    name: Rock Drive
+    preset_number: 5
+    notes: Dual-channel rock preset — Ch1 BOOST pushes louder than 
+      transparent-lift (Buddy Holly rhythm level); Ch2 DIST with HI GAIN 2 
+      engaged for Say It Ain't So solo saturation. Both channels active 
+      simultaneously.
+    parameters:
+      gain_1: 42           # ~10 o'clock — moderate boost, noticeably driven vs transparent-lift (13)
+      volume_1: 90         # ~2 o'clock — louder than transparent-lift (83); rhythm level push
+      tone_1: 64           # noon — neutral
+      presence_1: 0        # down — default
+      gain_1_type: 2       # boost — cleanest, loudest Ch1 mode (0=boost, 1=od, 2=dist)
+      gain_2: 89           # ~2 o'clock — high-gain distortion, solo territory
+      volume_2: 76         # ~1 o'clock — output level with Ch2 distortion
+      tone_2: 64           # noon — neutral
+      presence_2: 0        # down — default
+      gain_2_type: 2       # dist — hard clipping for saturation
+      treble_boost: 1      # off — pure KOT voice, no Rangemaster coloring
+      dip_hi_gain_2: 1      # HI GAIN 2 on — +25% gain on Ch2 for lead-sustain saturation
 
       # - id: kot-lead-stack
       #   name: KOT Lead Stack
@@ -96,42 +101,44 @@ devices:
       #     dip_hi_gain_2: 1  # HI GAIN 2 on — +25% gain on Ch2, LED red
       #     dip_master: 1     # MASTER on — VOL2 controls final output; needed with stacked boosts
 
-  - id: billy-strings-wombtone
-    manufacturer: Chase Bliss Audio
+- id: billy-strings-wombtone
+  manufacturer: Chase Bliss Audio
+  model: Wombtone MkII
+  type: digital
+  config:
+    type: chase_bliss
+    midi_channel: 3
     model: Wombtone MkII
-    type: digital
-    config:
-      type: chase_bliss
-      midi_channel: 3
-      model: Wombtone MkII
-    presets:
-      - id: slow-vibe
-        name: Slow Vibe
-        preset_number: 3
-        notes: Deep, slow vibrato for ambient swells and pads
-        parameters:
-          feed: 64     # Noon
-          volume: 70   # Noon
-          mix: 64      # Noon
-          rate: 48     # Slow speed — lazy, hypnotic pulse
-          depth: 45   # chill modulation for dramatic warble
-          form: 64     # Sine-like waveform
-          ramp: 0      # No ramping
-          clock_division: 2  # quarter — base tempo reference
+  presets:
+  - id: slow-vibe
+    name: Slow Vibe
+    preset_number: 3
+    notes: Deep, slow vibrato for ambient swells and pads
+    parameters:
+      feed: 64         # Noon
+      volume: 70       # Noon
+      mix: 64          # Noon
+      rate: 48         # Slow speed — lazy, hypnotic pulse
+      depth: 45       # chill modulation for dramatic warble
+      form: 64         # Sine-like waveform
+      ramp: 0          # No ramping
+      clock_division: 2      # quarter — base tempo reference
 
-      - id: envelope-filter
-        name: Envelope Filter
-        preset_number: 6
-        notes: "Static cocked-wah phaser — rate frozen at 0, high resonance (feed: 100) parks the phase sweep in the vowel sweet spot. Texture device in rock chain, not a performance sweep. Deep depth for obvious coloring."
-        parameters:
-          feed: 100        # High resonance — pronounced vowel/wah peak character
-          volume: 70       # Unity
-          mix: 70          # Moderate blend — filter vowel present without swallowing dry signal
-          rate: 0          # Frozen — static cocked-wah position, no LFO sweep
-          depth: 115       # Near-max — clearly audible phaser freeze, obvious coloring
-          form: 64         # Sine-like waveform
-          ramp: 0          # No ramping
-          clock_division: 2  # quarter — base tempo reference
+  - id: envelope-filter
+    name: Envelope Filter
+    preset_number: 6
+    notes: 'Static cocked-wah phaser — rate frozen at 0, high resonance (feed: 100)
+      parks the phase sweep in the vowel sweet spot. Texture device in rock chain,
+      not a performance sweep. Deep depth for obvious coloring.'
+    parameters:
+      feed: 100            # High resonance — pronounced vowel/wah peak character
+      volume: 70           # Unity
+      mix: 70              # Moderate blend — filter vowel present without swallowing dry signal
+      rate: 30              # Slow
+      depth: 115           # Near-max — clearly audible phaser freeze, obvious coloring
+      form: 64             # Sine-like waveform
+      ramp: 0              # No ramping
+      clock_division: 2      # quarter — base tempo reference
 
       # - id: lead-vibe
       #   name: Lead Vibe
@@ -160,24 +167,24 @@ devices:
       #     ramp: 0      # No ramping
       #     clock_division: 4  # eighth — faster rhythmic subdivision
 
-  - id: hx-stomp
-    manufacturer: Line 6
-    model: HX Stomp
-    type: modeler
-    config:
-      type: midi
-      midi_channel: 1
-    presets:
-      - id: clean
-        name: Clean
-        preset_number: 36
-        hlx_file: hlx/Clean.hlx
-        notes: Clean Fender tone
-      - id: mesa-rock
-        name: Mesa Rock
-        preset_number: 37
-        hlx_file: hlx/MesaRock.hlx
-        notes: Mesa Boogie amp model, high-gain rock tone
+- id: hx-stomp
+  manufacturer: Line 6
+  model: HX Stomp
+  type: modeler
+  config:
+    type: midi
+    midi_channel: 1
+  presets:
+  - id: clean
+    name: Clean
+    preset_number: 36
+    hlx_file: hlx/Clean.hlx
+    notes: Clean Fender tone
+  - id: mesa-rock
+    name: Mesa Rock
+    preset_number: 37
+    hlx_file: hlx/MesaRock.hlx
+    notes: Mesa Boogie amp model, high-gain rock tone
       # - id: marshall
       #   name: Marshall D
       #   preset_number: 37
@@ -194,126 +201,83 @@ devices:
       #   hlx_file: hlx/Doogie PB.hlx
       #   notes: Saturated lead tone with British character, D path
 
-  - id: mood
-    manufacturer: Chase Bliss Audio
+- id: mood
+  manufacturer: Chase Bliss Audio
+  model: Mood MkII
+  type: digital
+  config:
+    type: chase_bliss
+    midi_channel: 2
     model: Mood MkII
-    type: digital
-    config:
-      type: chase_bliss
-      midi_channel: 2
-      model: Mood MkII
-    presets:
-      - id: ambient-reverse-tape
-        name: Ambient Reverse Tape
-        preset_number: 3
-        notes: "Ambient reverb with a slight reverse tape loop"
-        parameters:
-          time: 32        # 2–3 o'clock — long reverb decay
-          mix: 77         # 11 o'clock — subtle wet blend, preserves dry signal
-          length: 50      # noon — neutral, looper not primary here
-          wet_modify: 44  # 1 o'clock — medium smear/diffusion
-          clock: 44      # 64k (fully CW) — clean/hi-fi, no aliasing
-          loop_clock_division: 5
-          loop_modify: 30 # noon — normal forward playback
-          ramp_speed: 0   # No ramping — static pad when frozen
-          wet_channel: 0  # reverb — ambient wash mode
-          routing: 2      # loop — reverb processes loop output only (not live signal)
-          loop: 1         # tape — warm loop texture if looper engaged
-          dip_r_trails: 127 # TRAILS on — wet fades smoothly after bypass
-          dip_r_latch: 127  # LATCH on — freeze stays hands-free after hold
+  presets:
+  - id: ambient-reverse-tape
+    name: Ambient Reverse Tape
+    preset_number: 3
+    notes: Ambient reverb with a slight reverse tape loop
+    parameters:
+      time: 32            # 2–3 o'clock — long reverb decay
+      mix: 77             # 11 o'clock — subtle wet blend, preserves dry signal
+      length: 50          # noon — neutral, looper not primary here
+      wet_modify: 44      # 1 o'clock — medium smear/diffusion
+      clock: 44          # 64k (fully CW) — clean/hi-fi, no aliasing
+      loop_clock_division: 5
+      loop_modify: 30     # noon — normal forward playback
+      ramp_speed: 0       # No ramping — static pad when frozen
+      wet_channel: 0      # reverb — ambient wash mode
+      routing: 2          # loop — reverb processes loop output only (not live signal)
+      loop: 1             # tape — warm loop texture if looper engaged
+      dip_r_trails: 127     # TRAILS on — wet fades smoothly after bypass
+      dip_r_latch: 127      # LATCH on — freeze stays hands-free after hold
 
-      - id: chorus-shimmer
-        name: Chorus Shimmer
-        preset_number: 7
-        notes: "Short-delay chorus shimmer — wet_channel delay path at short time (35) creates chorus-like shimmer. Routing: out covers live signal and loop output simultaneously. Think Smashing Pumpkins 'Today' rhythm chorus texture."
-        parameters:
-          time: 35         # Short delay — chorus-character shimmer range
-          mix: 72          # Present, audible chorus texture — not a background shimmer
-          length: 50       # noon — neutral
-          wet_modify: 40   # Moderate feedback — adds depth without runaway
-          clock: 60        # Moderate — hi-fi with slight warmth
-          loop_modify: 64  # noon — normal playback
-          ramp_speed: 0    # No ramping
-          wet_channel: 1   # delay — chorus-like shimmer path
-          routing: 1       # out — wet applies to full output (live signal + loop)
-          loop: 1          # tape — warm texture
-          dip_r_trails: 127  # TRAILS on — smooth bypass fade
+  - id: chorus-shimmer
+    name: Chorus Shimmer
+    preset_number: 7
+    notes: "Short-delay chorus shimmer — wet_channel delay path at short time (35)
+      creates chorus-like shimmer. Routing: out covers live signal and loop output
+      simultaneously. Think Smashing Pumpkins 'Today' rhythm chorus texture."
+    parameters:
+      time: 30
+      mix: 50
+      length: 50.0
+      wet_modify: 90
+      clock: 123
+      loop_modify: 40
+      ramp_speed: 64
+      wet_channel: 1.0
+      routing: 1.0
+      loop: 1.0
+      loop_overdub: 1
+      wet_bypass: 1
+      dip_r_trails: 127.0
+      dip_l_bounce: 1
+      dip_l_wet_modify: 1
+      dip_r_smooth: 1
+      dip_r_latch: 1
+      dip_r_no_dub: 1
 
-      # - id: dub-tape-delay
-      #   name: Dub Tape Delay
-      #   preset_number: 4
-      #   notes: "Rhythmic dub delay texture under crunch — doc recipe ②. High feedback just below runaway; roll CLOCK down live to pitch-drop repeats into dub bloops."
-      #   parameters:
-      #     time: 64        # noon — medium delay time
-      #     mix: 64         # noon — balanced wet/dry
-      #     length: 64      # noon — neutral
-      #     wet_modify: 95  # 2–3 o'clock — high feedback, just below runaway
-      #     clock: 50       # ~24–32k — slight warmth/tape character (roll CW for clean, CCW for bloop)
-      #     loop_modify: 64 # noon — normal playback
-      #     ramp_speed: 0   # No ramping — manual CLOCK sweep is the performance move
-      #     wet_channel: 1  # delay — rhythmic repeats
-      #     routing: 0      # in — wet processes live signal only
-      #     loop: 1         # tape — warm loop bed
-      #     dip_r_trails: 127 # TRAILS on — delay fades on bypass
-      # - id: granular-bloop-cloud
-      #   name: Granular Bloop Cloud
-      #   preset_number: 5
-      #   notes: "Slip-mode granular re-sampler — doc recipe ④. Single notes shatter into re-pitched grains. Hold left footswitch to freeze a grain cloud and play over it."
-      #   parameters:
-      #     time: 45        # 10–11 o'clock — fast refresh rate, more grain scramble
-      #     mix: 64         # noon — even wet/dry balance
-      #     length: 64      # noon — neutral
-      #     wet_modify: 70  # Just off-center — grains slightly slowed/reversed for bloopy character
-      #     clock: 45       # ~16–32k — some aliasing adds grit to grains over high-gain lead
-      #     loop_modify: 64 # noon — neutral loop playback
-      #     ramp_speed: 0   # No ramping
-      #     wet_channel: 2  # slip — granular re-sampler mode
-      #     routing: 0      # in — processes live signal
-      #     loop: 1         # tape — warm loop texture
-      #     dip_r_trails: 127 # TRAILS on — grain cloud fades on bypass
-      # - id: reverse-stretch-drift
-        # name: Reverse-Stretch Drift Cloud
-        # preset_number: 6
-        # notes: "Smeared reversed time-stretch cloud — doc recipe ⑦ (Tier 2). Chord becomes a drifting, reversed, pitch-stretched cloud. BOUNCE + CLOCK ramp = self-generating drone. Wacky territory."
-        # parameters:
-        #   time: 95        # 2–3 o'clock — long reverb decay washing over the loop cloud
-        #   mix: 64         # noon — blend frozen reverb with loop
-        #   length: 30      # Small — small slice size for stretch mode granular feel
-        #   wet_modify: 80  # Moderate reverb smear/diffusion
-        #   clock: 127      # 64k — clean input into stretch processor
-        #   loop_modify: 25 # Off-center/negative — stretch + reverse playback direction
-        #   ramp_speed: 30  # Slow auto-ramp for gradual pitch drift (BOUNCE must be on)
-        #   wet_channel: 0  # reverb — washes over the stretch cloud
-        #   routing: 2      # wet (loop only) — reverb only touches loop, live stays dry
-        #   loop: 2         # stretch — time-stretch slices
-        #   dip_l_bounce: 127 # BOUNCE on — CLOCK ramps on waveform for generative drift
-        #   dip_l_clock: 127  # CLOCK ramp dip — auto-modulates clock for pitch drift
-        #   dip_r_trails: 127 # TRAILS on — cloud fades on bypass
-        #   dip_r_latch: 127  # LATCH on — freeze stays hands-free
-        #   dip_r_smooth: 127 # SMOOTH on — fluid CLOCK glides (removes stepping)
-
-  - id: mc6
-    manufacturer: Morningstar
-    model: MC6
+- id: mc6
+  manufacturer: Morningstar
+  model: MC6
+  type: controller
+  config:
     type: controller
-    config:
-      type: controller
-      midi_channel: 1
-      scenes:
-        clean:
-          description: "Clean Fender with phaser vibe and doubling"
-          presets:
-            hx-stomp: clean
-            billy-strings-wombtone: slow-vibe
-            brothers: transparent-lift
-            mood: ambient-reverse-tape
-        rock:
-          description: "90s rock: Mesa Boogie amp, Brothers distortion, Wombtone wah, Mood chorus"
-          presets:
-            hx-stomp: mesa-rock
-            billy-strings-wombtone: envelope-filter
-            brothers: rock-drive
-            mood: chorus-shimmer
+    midi_channel: 1
+    scenes:
+      clean:
+        description: Clean Fender with phaser vibe and doubling
+        presets:
+          hx-stomp: clean
+          billy-strings-wombtone: slow-vibe
+          brothers: transparent-lift
+          mood: ambient-reverse-tape
+      rock:
+        description: '90s rock: Mesa Boogie amp, Brothers distortion, Wombtone wah,
+          Mood chorus'
+        presets:
+          hx-stomp: mesa-rock
+          billy-strings-wombtone: envelope-filter
+          brothers: rock-drive
+          mood: chorus-shimmer
         # boogie:
         #   description: "High gain Boogie lead with Brothers boost and broken tape"
         #   presets:
@@ -335,14 +299,14 @@ devices:
         #     brothers: am-crunch
         #     billy-strings-wombtone: slow-vibe
         #     mood: dub-tape-delay
-      banks:
-        - bank: 1
-          name: Main Rig
-          switches:
-            A:
-              scene: clean
-            B:
-              scene: rock
+    banks:
+    - bank: 1
+      name: Main Rig
+      switches:
+        A:
+          scene: clean
+        B:
+          scene: rock
             # C:
             #   scene: lead
             # D:
